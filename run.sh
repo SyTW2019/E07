@@ -7,6 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 echo "Hola he modificado esto sin sentido\n"
+echo ""Hola, he modificado esto también sin sentido. Soy Daniel"
 
 # Load deployment environment
 . /root/.deployment.env
