@@ -13,15 +13,15 @@ case "$1" in
   start)
     # --uid and --gid are the unpriviledge user and group that will run the service
     # You can use a different one as long as it exists in the machine or you have created it before.
-    pm2 start ${APP_FOLDER}/server.js --name node-todo --uid bitnami --gid bitnami
+    pm2 start ${APP_FOLDER}/server.js --name node-todo --uid usuario g --gid bitnami
     exit $?
     ;;
   stop)
-    pm2 stop node-todo --uid bitnami --gid bitnami
+    pm2 stop node-todo --uid usuario g --gid bitnami
     exit $?
     ;;
   restart|force-reload|reload)
-    pm2 restart node-todo --uid bitnami --gid bitnami
+    pm2 restart node-todo --uid usuario g --gid bitnami
     exit $?
     ;;
   init)
@@ -44,8 +44,8 @@ case "$1" in
       ln -sf ${DATA_FOLDER}/public ${APP_FOLDER}/public
 
       # Fix permissions
-      # We set bitnami as user and group as is the user that will run the service.
-      chown -R bitnami:bitnami ${DATA_FOLDER}
+      # We set usuario g as user and group as is the user that will run the service.
+      chown -R usuario g usuario g ${DATA_FOLDER}
       chmod 600 ${DATA_FOLDER}/.initialized
     else
       echo "==> Data already initialized. Skipping..."
@@ -58,12 +58,12 @@ case "$1" in
     echo "==> Initializing application..."
 
     # Fix permissions
-    # We set bitnami as user and group as is the user that will run the service.
-    chown -R bitnami:bitnami ${APP_FOLDER}
+    # We set usuario g as user and group as is the user that will run the service.
+    chown -R usuario g usuario g ${APP_FOLDER}
     chown root:root ${APP_FOLDER}/run.sh
 
     # Install dependencies
-    su - bitnami -c "cd ${APP_FOLDER}; npm install"
+    su - usuario g -c "cd ${APP_FOLDER}; npm install"
     exit 0
     ;;
   *)
