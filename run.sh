@@ -66,6 +66,7 @@ case "$1" in
     su - usuario g -c "cd ${APP_FOLDER}; npm install"
     exit 0
     ;;
+  
   *)
     echo "Invalid option!"
     exit 1
