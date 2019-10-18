@@ -6,6 +6,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+echo "Hola he modificado esto sin sentido\n"
+
 # Load deployment environment
 . /root/.deployment.env
 
