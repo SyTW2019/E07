@@ -1,0 +1,15 @@
+{
+  "name": "usuario",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raúl Rodríguez Torres, Daniel Rodríguez Martín, Andrés Concepción Afonso, Brian Samir Santamaría Valero, José Ramón Rodríguez Hernández",
+  "license": "ISC",
+  "description": "Creación del chat Bananat",
+  "dependencies": {
+    "socket.io": "*",
+    "express": "*"
+  }
+}

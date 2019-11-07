@@ -1,6 +1,6 @@
 body
 {
-    background-image: url("https://i.pinimg.com/originals/62/e3/a1/62e3a1c9cc17ae2f36b3d7b43d390740.jpg");
+    background-image: url("../img/full_login_background.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -68,7 +68,7 @@ a:hover
 {
     body
     {
-        background-image: url("https://miro.medium.com/max/2560/1*kNGrPJfKdlSch2nXlXKvMg.jpeg");
+        background-image: url("../img/responsive_login_background.jpeg");
         background-position: center;
         background-size: cover; 
     }
