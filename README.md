@@ -13,5 +13,5 @@ Componentes del grupo:
 - José Ramón Rodríguez Hernández.
 - Brian Samir Santamaría Valero.
 
- Trabajo realizado en la *Universidad de La Laguna*, para la asignatura de *Sistemas y
-Tecnologías Web*.
+ Trabajo realizado en la ***Universidad de La Laguna***, para la asignatura de ***Sistemas y
+Tecnologías Web***.
