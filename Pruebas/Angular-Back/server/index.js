@@ -7,7 +7,7 @@ let logger = require("morgan")
 let users = require("./routes/users.route.js")
 
 //conexion a mongoose
-mongoose.connect("mongodb://localhost:27017/shopsite", (err, res) => {
+mongoose.connect("mongodb://localhost:27017/bananat", (err, res) => {
 	if (err){
 		app.listen(port, () => {
 			console.log("Servidor del API rest en http://localhost:" + port)
