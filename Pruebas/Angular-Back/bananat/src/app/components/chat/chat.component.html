@@ -1,0 +1,35 @@
+<div class="container">
+    <div id="messageArea" class="row col s12">
+
+        <div class="col s12">
+            <div id="users"></div>
+        </div>
+
+        <div class="col s12" id="chat_grid">
+
+            <div class="col s12 valign-wrapper" id="chat_header">
+                <div class="col s1" id="chat_image">
+                    <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="" class="circle responsive-img">
+                </div>
+                <div class="col s10" id="chat_name">
+                    Raúl Rodríguez Torres
+                </div>
+            </div>
+
+            <div class="col s12 messages" id="chat_history">
+                <ul id="chat">
+                </ul>
+            </div>
+
+            <div class="col s12 valign-wrapper" id="chat_message_bar">
+                <div class="col s11 valign-wrapper" id="box_message">
+                    <textarea id="message" class="materialize-textarea" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage(user, message)"></textarea>
+                </div>
+                <div class="col s2" id="submit_button">
+                    <button (click)="sendMessage(user, message)" id="send_button" class="btn-floating btn-large waves-effect waves-light" type="submit"><i class="material-icons">send</i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
