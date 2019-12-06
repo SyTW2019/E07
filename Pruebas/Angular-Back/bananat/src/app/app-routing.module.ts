@@ -3,8 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { ChatComponent } from './components/chat/chat.component'
 import { RegisterComponent } from './components/register/register.component'
-
-
+import { Page404Component } from './components/page404/page404.component'
 
 const routes: Routes = [
 	{
@@ -25,8 +24,12 @@ const routes: Routes = [
 		component: RegisterComponent
 	},
 	{
+		path: 'page404',
+		component: Page404Component
+	},
+	{
 		path: '**',
-		redirectTo: 'login',
+		redirectTo: 'page404',
 		pathMatch: 'full',
 	}
 ];

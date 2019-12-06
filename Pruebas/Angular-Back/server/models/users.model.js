@@ -5,7 +5,9 @@ let Schema = mongoose.Schema
 
 let userSchema = Schema({
 	user: String,
-	password: String
+	mail: String,
+	password: String,
+	birthday: Number
 })
 
 module.exports = mongoose.model("User", userSchema)

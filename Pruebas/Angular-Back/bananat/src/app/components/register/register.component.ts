@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../service/users/users.service'
+
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  public mail:string
+  public pwd:string
+  public name:string
+  public birthday:number
+  public surname:string
+
+  constructor(private _userSrv:UsersService) {}
 
   ngOnInit() {
+  }
+
+  register() {
+  	this._userSrv.register(this.mail, this.name, this.surname, this.pwd, this.birthday).subscribe(response => {
+  		console.log("Register: OK!")
+  	}, error => {
+  		console.error(error)
+  	})
   }
 
 }

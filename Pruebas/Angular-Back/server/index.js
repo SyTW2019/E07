@@ -6,6 +6,12 @@ let port = process.env.PORT || 4300
 let logger = require("morgan")
 let users = require("./routes/users.route.js")
 
+let WebSocket = require("ws");
+let WebSocketServer = require('ws').Server;
+let wss = new WebSocketServer({ port: 8080 });
+
+let wsList = [];
+
 //conexion a mongoose
 mongoose.connect("mongodb://localhost:27017/bananat", (err, res) => {
 	if (err){
@@ -23,7 +29,7 @@ mongoose.connect("mongodb://localhost:27017/bananat", (err, res) => {
 })
 //fin conex
 
-app.use(logger("adev"))
+app.use(logger("dev"))
 
 app.use( (req, res, next) => {
 //Asterisco, campo donde permito a las Ip's que tendran el acceso, este significa todas(el propio '*')
@@ -37,3 +43,24 @@ app.use( (req, res, next) => {
 
 //Se usará esta ruta para las funciones que vamos a ir implementando "v1"--> version 1. No se recomienda borrar las anteriores
 app.use("/api/v1/users/", users)
+
+
+wss.on('connection', function(ws) {
+    console.log('WS connection established!')
+    wsList.push(ws);
+
+    ws.on('close', function() {
+        wsList.splice(wsList.indexOf(ws), 1);
+        console.log('WS closed!')
+    });
+
+    ws.on('message', function(message) {
+        console.log('Got ws message: ' + message);
+        for (let i = 0; i < wsList.length; i++) {
+            // send to everybody on the site
+            wsList[i].send(message);
+        }
+    });
+});
+
+app.listen(8888);
