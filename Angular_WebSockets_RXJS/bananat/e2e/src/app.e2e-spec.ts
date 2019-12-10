@@ -37,6 +37,8 @@ var user        = {
    		browser.get('http://localhost:4200/login');
 	 expect( browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
   	});
+
+
 	it ('fallo de  login',function(){
 		browser.get('http://localhost:4200/login');
 		username.sendKeys('admin');
