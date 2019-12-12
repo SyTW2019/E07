@@ -27,7 +27,8 @@
                     <label for="email">Correo</label>
                 </div>
             </div>
-            <div class="row">
+                  
+		 <div class="row">
                 <i class="material-icons">date_range</i>
                 <div class="input-field s6 m6 l6">
                     <input type=text name="bdate" id="bdate" class="datepicker" [(ngModel)]="birthday" name="birthday" required>
@@ -35,18 +36,9 @@
                 </div>
 
             </div>
-            <div class="row">
-                <button class="google_register" type="submit">
-                        <img class="google_icon">
-
-                    </button>
-                <button class="facebook_register" type="submit">
-                        <img class="facebook_icon">
-                    </button>
-            </div>
 
             <div class="row register_button">
-                <button class="btn waves-effect waves-light" type="submit" name="action" (click)="register()">
+                <button  id ="login" class="btn waves-effect waves-light" type="submit" name="action" (click)="register()">
                         Registrarse                            
                     </button>
 
