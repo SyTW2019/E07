@@ -24,6 +24,7 @@ notifications:
   slack: sytw:WVOowm9Fxyks9mdwi1V6m6io
 
 # Integración con Sonar Qube
+# prueba
 addons:
   sonarcloud:
     organization: "sytw2019" # the key of the org you chose at step #3
