@@ -25,3 +25,19 @@ script:
 # Integración con Slack
 notifications:
   slack: sytw:WVOowm9Fxyks9mdwi1V6m6io
+
+# Integración con Sonar Qube
+addons:
+  sonarcloud:
+    organization: "sytw2019" # the key of the org you chose at step #3
+    token:
+      secure: "lVZ3WFDRfq9d5A0twSin2V7MwnREAwfw6SbgLOQQ3qzRfKagiP+PRu/NumySW5SDqcg2lA1TEQnUrUN7qXeRvLLw4+ZaGpFx6m126uAyggRWUAXUO89npqxSkbTn2W6pCMmZ+
+4FicD7XOcU+BQrcadBvxS0W6QUbvV+l/AeVaOYA+8EZdBWf0u7ztgC/9d8EGTpivfeyY7It6MitmLMVuaRtNVxq3+U2y3HGGsJX8+uXrH2NZaUGvEOEtJH3wlNMT3zXMOeEgqUR7njNjAuPk
+z+OT49l5Gb1DZPtdYw174qO092hfivCeg0UF3BSXfX0sK5/0leMRDUi88gfE83YkuuDWgdG3y25dl2OngmwYF527ug549yl52jh1AE9SDXqoK2ANYLr3s2zl2XfRFH3f6B3+4DnOvByWbX4P
++L9osJk0c8vHeFj/YmNxYsBoFj1OA3BrWxFxEKoR/sH3/FXE5uh54eVDOKVyUPQNPNUEqo8uiaV3VKJGFTIg73fJaomZ5L5riIEr9s+Ta6T3k3NdbFOGBSrmluieMhrtTeloS1is9f/BJK7z
+l0hVYuc0y/8a6Ros/wticTqpRYSFKWwvKgp+UPywa6pZg3gXHhdU55GmbcABU7m3vtCnDttuE+KJVUherfhED2UZkxYbolSoYriX9MlXxS5+wqzJOfTpNU=" 
+# encrypted value of your token
+
+script:
+  # other script steps might be done before running the actual analysis
+  - sonar-scanner
