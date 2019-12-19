@@ -20,7 +20,8 @@ install:
   - npm install
 
 script:
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - sonar-scanner
+#  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
 # Integración con Slack
 notifications:
@@ -33,7 +34,3 @@ addons:
     token:
       secure: "VT8mJ0dGzVJmZ070sYhsyP0qCJwtV3q6u0uVGBuh1zsNRGcyIh0iQKwhH6pHTGg80bDMZFVm5u/ffvotUsgoni5gO6dVk1T30Mzk8yYsPixrM4fOZlqRwIJLHWgySEEROyzpiNxiLKTovIAEQfR/DGVZqWS5ncJHoIu3ORErq1qfCRnnaZ3C270NmzN6IdMpFJRcbK5BQeyg783loo7ur/DDM5Ygu9/Ae6V8k2QvPj1cYWihAR4Er3/TG3C1t0PEFH9y64ADfOAzZc+wvj49O+DyrDtR//k85w2a3MLfaJgLEvWniRyw6uF4K3kayoAtUzoa/4+0hFBrORThF96RpEV8+RHP9OssMojguGu5pm4LJsJDPC6xShH6TTP6ITL/Ab0vDX2npg1mfGZr2dLziMTX4QvmDw7VmmykIOda6t2aZr/RrALNnELFKk78Rm95/r4rEsA4uRT9d+tlJUwgmMdEaR3VUsWDeiqBx2aPrN1P7OvNpe81SgVkiMtVOwkyqIiFw2P9BAB6HhHQvEVb/MBJvz3qBLLCOvw+zzQF8sbVP3MpGJKN3U/JaUCVrgUMraPgk4JCjnjhSWDQXSJzega0z8keRIzxIZLQPuJrd6iASN8/mLa5JciHqxyuKQmF/fcghsE64R6WY5n2ntcgUuyAJm/xDE/u3eCc4jrItts=" 
 # encrypted value of your token
-
-script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
