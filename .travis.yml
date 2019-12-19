@@ -19,10 +19,6 @@ cache:
 install:
   - npm install
 
-script:
-  - sonar-scanner
-#  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
-
 # Integración con Slack
 notifications:
   slack: sytw:WVOowm9Fxyks9mdwi1V6m6io
@@ -32,5 +28,9 @@ addons:
   sonarcloud:
     organization: "sytw2019" # the key of the org you chose at step #3
     token:
-      secure: "VT8mJ0dGzVJmZ070sYhsyP0qCJwtV3q6u0uVGBuh1zsNRGcyIh0iQKwhH6pHTGg80bDMZFVm5u/ffvotUsgoni5gO6dVk1T30Mzk8yYsPixrM4fOZlqRwIJLHWgySEEROyzpiNxiLKTovIAEQfR/DGVZqWS5ncJHoIu3ORErq1qfCRnnaZ3C270NmzN6IdMpFJRcbK5BQeyg783loo7ur/DDM5Ygu9/Ae6V8k2QvPj1cYWihAR4Er3/TG3C1t0PEFH9y64ADfOAzZc+wvj49O+DyrDtR//k85w2a3MLfaJgLEvWniRyw6uF4K3kayoAtUzoa/4+0hFBrORThF96RpEV8+RHP9OssMojguGu5pm4LJsJDPC6xShH6TTP6ITL/Ab0vDX2npg1mfGZr2dLziMTX4QvmDw7VmmykIOda6t2aZr/RrALNnELFKk78Rm95/r4rEsA4uRT9d+tlJUwgmMdEaR3VUsWDeiqBx2aPrN1P7OvNpe81SgVkiMtVOwkyqIiFw2P9BAB6HhHQvEVb/MBJvz3qBLLCOvw+zzQF8sbVP3MpGJKN3U/JaUCVrgUMraPgk4JCjnjhSWDQXSJzega0z8keRIzxIZLQPuJrd6iASN8/mLa5JciHqxyuKQmF/fcghsE64R6WY5n2ntcgUuyAJm/xDE/u3eCc4jrItts=" 
+      secure: "DINNPwdrvjRWoahFpAzNlZma2IqUNNqhqxS0b4iviFfc1EtzopB7sPjuWVoMi1F9fQpQleGqKmnPwF+1cpLvBv6gH8VfHJwjX5zyfbuwXyafZiZ6yfVoQlvrHytJwuFrHmx+b02VkFWzt76n86yrhjYHFVqNR2rrk+RIF4PvmQffQgZiVmKMRjsh80jdhdUVfKUrqZ0uH4x97jDy1VkmhelPHWbKXOi/Hy7Shr/0vAvCi8RYWJzx0Wiyq8QAozjh/nEh9OuWienogn3SF5mOH4MP5Wa7xEcLe+9zyB2fwmOlJKrMelTw4cqs1jTzDyMY8jTtwXOvZ8+CwNArGUswDt3S3NkXAQOw1LRDOewrr5uPsOiKwpRHt+Lw7/0+dOHxyHjiw9g8ACL8yX57JBxO4oCMnJUSwZQUw2SnnMTvj1ez7zaS5IRuTObYFDlKa0RtSgytug+b1d/4kysMRbmf2Ic1uFjW3lBj+XZGf8c8ch4PjEQAAnZ2do5JOpZdEzCK+qLzeG109uHnpNSyCPVEFQfxUgyK3oc4h9fKHlCewjQjk9bml09EevhsIJeAFCgoMaU/P8NpWiOEcv3LctYEaNLmlANlAm8JQv3OUuLLafnzfA4uEme7w6LBkxBI1XKIbA2K158pp7aKUKg/unN5PWqHVPVI0g8/4aCmN8+8mmw="
 # encrypted value of your token
+
+script:
+  - sonar-scanner
+#  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
