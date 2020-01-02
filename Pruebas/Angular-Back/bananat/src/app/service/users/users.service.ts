@@ -11,7 +11,7 @@ export class UsersService {
 
   register(mail: string, name: string, surname: string, pwd: string, birthday: number) {
   	return this.net.post("http://localhost:4300/api/v1/users/register", {
-  		user: name + surname,
+  		user: name + ' ' + surname,
   		mail: mail,
   		password: pwd,
   		birthday: birthday

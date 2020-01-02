@@ -8,6 +8,7 @@ const CHAT_URL = "ws://localhost:8080";
 export interface Message {
     author: string;
     message: string;
+    token: string;
 }
 
 @Injectable()
@@ -19,7 +20,8 @@ export class ChatService {
             let data = JSON.parse(response.data);
             return {
                 author: data.author,
-                message: data.message
+                message: data.message,
+                token: data.token
             };
         }));
     }

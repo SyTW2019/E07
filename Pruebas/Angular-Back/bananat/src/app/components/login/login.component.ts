@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   login() {
   	this._usersSrv.login(this.mail, this.pwd).subscribe(response => {
   		let token = response as any
-  		localStorage.setItem("token", token.token)
-  		console.log("Login: OK!")
+      localStorage.setItem("token", token.token)
+      console.log("Login: OK!")
   	}, error => {
   		console.error(error)
   	})
