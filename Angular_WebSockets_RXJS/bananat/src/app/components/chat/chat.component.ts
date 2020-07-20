@@ -20,7 +20,12 @@ export class ChatComponent {
   constructor(private chatService: ChatService, private sanitizer: DomSanitizer) {
     chatService.messages.subscribe(msg => {
       console.log("Response from websocket: " + msg.message);
-      this.htmlStr +=  '<li class="sent"><img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="" /><p>' + msg.message + '</p></li>';
+      if(msg.message != '\n' && msg.message != '')
+      {
+        this.htmlStr +=  '<li class="replies"><img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="" /><p>' + msg.message + '</p></li>';
+        let chat = document.getElementById("chat_history");
+        chat.scrollTop = Math.max(0, chat.scrollHeight - chat.offsetHeight);
+      }
       this.message = '';
     });
   }

@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 const CHAT_URL = "ws://localhost:8080";
 
 export interface Message {
+    type: string;
     author: string;
     message: string;
     token: string;
@@ -19,6 +20,7 @@ export class ChatService {
         this.messages = <Subject<Message>>wsService.connect(CHAT_URL).pipe(map((response: MessageEvent): Message => {
             let data = JSON.parse(response.data);
             return {
+                type: data.type,
                 author: data.author,
                 message: data.message,
                 token: data.token

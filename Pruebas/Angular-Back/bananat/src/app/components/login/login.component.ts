@@ -18,8 +18,11 @@ export class LoginComponent implements OnInit {
 
   login() {
   	this._usersSrv.login(this.mail, this.pwd).subscribe(response => {
-  		let token = response as any
-      localStorage.setItem("token", token.token)
+      let res = response as any
+      let bananat = {};
+      bananat['token'] = res.token;
+      bananat['username'] = res.user;
+      localStorage.setItem('bananat', JSON.stringify(bananat));
       console.log("Login: OK!")
   	}, error => {
   		console.error(error)

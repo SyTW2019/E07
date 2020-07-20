@@ -9,11 +9,10 @@ import { UsersService } from '../../service/users/users.service'
 })
 export class RegisterComponent implements OnInit {
 
-  public mail:string
-  public pwd:string
-  public name:string
-  public birthday:number
-  public surname:string
+  public mail:string;
+  public pwd:string;
+  public name:string;
+  public surname:string;
 
   constructor(private _userSrv:UsersService) {}
 
@@ -21,11 +20,10 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-  	this._userSrv.register(this.mail, this.name, this.surname, this.pwd, this.birthday).subscribe(response => {
+  	this._userSrv.register(this.mail, this.name, this.surname, this.pwd).subscribe(response => {
   		console.log("Register: OK!")
   	}, error => {
   		console.error(error)
   	})
   }
-
 }

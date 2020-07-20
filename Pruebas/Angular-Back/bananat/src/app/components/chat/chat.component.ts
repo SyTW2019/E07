@@ -1,10 +1,7 @@
 import { WebsocketService } from '../../service/websocket/websocket.service';
 import { ChatService } from '../../service/chat/chat.service';
-import { Component, ViewChild, ElementRef, Input, Output, ViewEncapsulation} from '@angular/core';
+import { Component, Input, Output, ViewEncapsulation} from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
-import { tokenName } from '@angular/compiler';
-
-
 
 @Component({
   selector: 'app-chat',
@@ -16,28 +13,43 @@ import { tokenName } from '@angular/compiler';
 export class ChatComponent {
 
   @Output() htmlStr: string = "";
+  @Output() username: string = "User";
   @Input() message: string = "";
 
   constructor(private chatService: ChatService, private sanitizer: DomSanitizer) {
+    let bananat = localStorage.getItem('bananat');
+    bananat = JSON.parse(bananat);
+    this.username = `${bananat['username']}`;
+
     chatService.messages.subscribe(msg => {
-      console.log("Response from websocket: " + msg.message);
-      console.log(localStorage.getItem("token"));
-      if(localStorage.getItem("token") === msg.token)
+      if(bananat['token'] === msg.token)
         this.htmlStr +=  '<li class="sent"><img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="" /><p>' + msg.message + '</p></li>';
       else
         this.htmlStr +=  '<li class="replies"><img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="" /><p>' + msg.message + '</p></li>';
-      this.message = '';
+        this.message = '';
+        this.autoScroll();
     });
   }
 
   sendMessage(user, text) {
-    var message = {
-      author: user,
-      message: text,
-      token: localStorage.getItem("token")
+    if(text !== '\n' && text !== '') {
+      let bananat = localStorage.getItem('bananat');
+      bananat = JSON.parse(bananat);
+      let message = {
+        type: "message",
+        author: user,
+        message: text,
+        token: bananat['token']
+      }
+      this.chatService.messages.next(message);
     }
-    
-    console.log("new message from client to websocket: ", message.message);
-    this.chatService.messages.next(message);
+    else {
+      this.message = "";
+    }
+  }
+
+  autoScroll() {
+    const chat = document.querySelector('#chat_history');
+    chat.scrollTop = chat.scrollHeight;
   }
 }
