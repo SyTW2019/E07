@@ -1,0 +1,25 @@
+<div class="containerPage">
+    <div id="messageArea" class="row col s12">
+        <div class="col s12 valign-wrapper" id="chat_header">
+            <div class="col s1" id="chat_image"></div>
+            <div class="col s10" id="chat_name" [innerHTML]="username">
+                {{ username }}
+            </div>
+        </div>
+
+        <div class="col s12 messages" id="chat_history">
+            <ul id="chat" [innerHTML]="htmlStr">
+                {{ htmlStr }}
+            </ul>
+        </div>
+
+        <div class="col s12 valign-wrapper" id="chat_message_bar">
+            <div class="col s11 valign-wrapper" id="box_message">
+                <textarea id="message" rows="10" cols="50" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage(user, message)">{{ message }}</textarea>
+            </div>
+            <div class="col s1" id="submit_button">
+                <button (click)="sendMessage(user, message)" id="send_button" class="btn-block btn-small waves-effect waves-light" type="submit"><i class="material-icons">send</i></button>
+            </div>
+        </div>
+    </div>
+</div>
