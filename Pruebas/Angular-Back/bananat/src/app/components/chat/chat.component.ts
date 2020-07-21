@@ -2,6 +2,7 @@ import { WebsocketService } from '../../service/websocket/websocket.service';
 import { ChatService } from '../../service/chat/chat.service';
 import { Component, Input, Output, ViewEncapsulation} from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -16,10 +17,15 @@ export class ChatComponent {
   @Output() username: string = "User";
   @Input() message: string = "";
 
-  constructor(private chatService: ChatService, private sanitizer: DomSanitizer) {
-    let bananat = localStorage.getItem('bananat');
-    bananat = JSON.parse(bananat);
-    this.username = `${bananat['username']}`;
+  constructor(private chatService: ChatService, private sanitizer: DomSanitizer, private router:Router) {
+    let bananat;
+    try {
+      bananat = localStorage.getItem('bananat');
+      bananat = JSON.parse(bananat);
+      this.username = `${bananat['username']}`;
+    } catch {
+      this.router.navigate(['login']);
+    }
 
     chatService.messages.subscribe(msg => {
       if(bananat['token'] === msg.token)
@@ -48,6 +54,11 @@ export class ChatComponent {
     }
   }
 
+  logout() {
+    localStorage.removeItem('bananat');
+    this.router.navigate(['login']);
+  }
+  
   autoScroll() {
     const chat = document.querySelector('#chat_history');
     chat.scrollTop = chat.scrollHeight;
