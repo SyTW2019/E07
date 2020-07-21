@@ -185,15 +185,9 @@
 }
 
 .logout {
-    background: black;
     position: absolute;
     top: 0;
     right: 0;
-    background: url('../../assets/img/logout.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 
