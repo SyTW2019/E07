@@ -1,3 +1,11 @@
+@media screen and (min-width: 375px) {
+
+    .register {
+
+        background-color: purple;
+    }
+}
+
 ::ng-deep .body {
     margin: 0;
     padding: 0;
@@ -8,6 +16,10 @@
     align-items: center;
     background-attachment: fixed;
 }
+
+::placeholder {
+    color: #828282;
+  }
 
 .app_name {
     text-transform: uppercase;
@@ -29,26 +41,16 @@ section {
     padding-bottom: 70px;
 }
 
-section .register {
-    position: relative;
-    min-width: 80%;
-    padding: 0px;
+.register {
+    width: 400px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
     border-radius: 12px;
     color: #000;
     overflow: hidden;
-}
-
-section .register:before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background-image: url("../../assets/img/full_login_background.jpg");
-    background-attachment: fixed;
-    filter: blur(15px);
+    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
 }
 
 .col {
@@ -67,10 +69,6 @@ section .register:before {
     display: flex;
     align-items: center;
     margin-right: 20px;
-}
-
-.datepicker {
-    width: 80px;
 }
 
 .material-icons {
@@ -93,46 +91,104 @@ input {
     width: 400px;
 }
 
-.register_button {
-    display: flex;
-    justify-content: center;
+.register_button
+{
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
-.google_register {
+.socialnetworkregister.flex-container
+{
+    height: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/****************** Google Register ******************/
+
+.google_register
+{
     width: 130px;
-    height: 55px;
+    height: inherit;
+    border-radius: 5px;
     border-style: solid;
     border-width: 2px;
-    border-color: #d43a00;
-    background-color: #d43a00;
-    margin-left: 70px;
-    margin-top: -20px;
+    border-color: #db4242;
+    background-color: #db4242;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#googleCustomBtn
+{
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#googleCustomBtn:hover
+{
+    cursor: pointer;
+}
+
+span.label
+{
+    font-family: serif;
+    font-weight: normal;
+}
+
+.GIcon
+{
+    background: url("../../assets/img/google_icon.png")  no-repeat;
+    height: 25px;
 }
 
 .google_register:hover {
-    background-color: #ff4600;
-    border-color: #ff4600;
+    background-color: #ff4b4b;
+    border-color: #ff4b4b;
     cursor: pointer;
     transition: 0.4s;
 }
 
-.google_icon {
-    height: 30px;
+/*******************************************************/ 
+
+
+
+/****************** Facebook Register ******************/
+
+.fbIcon
+{
+    height: 25px;
+    filter: invert(100%);
+    background-image: url("../../assets/img/facebook_icon.png") no-repeat;
 }
 
-.facebook_icon {
-    height: 30px;
+#facebookCustomBtn
+{
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    color: white;
 }
 
-.facebook_register {
+.facebook_register
+{
     width: 130px;
-    height: 55px;
+    height: inherit;
+    border-radius: 5px;
     border-style: solid;
     border-width: 2px;
-    margin-top: -20px;
     border-color: #38539B;
     background-color: #38539B;
-    margin-left: 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .facebook_register:hover {
@@ -141,6 +197,8 @@ input {
     cursor: pointer;
     transition: 0.4s;
 }
+
+/*******************************************************/
 
 h1 {
     margin-bottom: 10%;
