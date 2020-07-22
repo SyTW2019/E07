@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public mail:string
+  public user:string
   public pwd:string
 
   constructor(private _usersSrv:UsersService, private router:Router) {}
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-  	this._usersSrv.login(this.mail, this.pwd).subscribe(response => {
+  	this._usersSrv.login(this.user, this.pwd).subscribe(response => {
       let res = response as any;
       let bananat = {};
       bananat['token'] = res.token;

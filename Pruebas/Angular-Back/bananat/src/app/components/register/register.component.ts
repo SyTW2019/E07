@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   public pwd:string;
   public name:string;
   public surname:string;
+  public username:string;
 
   constructor(private _userSrv:UsersService) {}
 
@@ -20,7 +21,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-  	this._userSrv.register(this.mail, this.name, this.surname, this.pwd).subscribe(response => {
+  	this._userSrv.register(this.mail, this.name, this.surname, this.pwd, this.username).subscribe(response => {
   		console.log("Register: OK!")
   	}, error => {
   		console.error(error)
