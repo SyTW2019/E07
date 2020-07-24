@@ -23,7 +23,7 @@
     border-radius: 3%;
 }
 
-#chat_header {
+#chatHeader {
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -31,12 +31,12 @@
     border-bottom: 1px solid black;
 }
 
-#chat_name {
+#chatName {
     font-size: 2vh;
     font-family: Neuton;
 }
 
-#chat_image {
+#chatImage {
     height: 7vh;
     width: 7vh;
     border: 1px solid black;
@@ -48,12 +48,12 @@
 
 }
 
-#chat_history {
+#chatHistory {
     background: lightgrey;
     height: 75%;
 }
 
-#chat_message_bar {
+#chatMessageBar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,13 +62,13 @@
     border-top: 1px solid black;
 }
 
-#box_message {
+#boxMessage {
     border-radius: 20px;
     width: 80%;
     height: 80%;
 }
 
-#submit_button {
+#submitButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,12 +76,12 @@
     height: 20%;
 }
 
-.message_left {
+.messageLeft {
     width: 100%;
     filter: opacity(50);
 }
 
-.message_right {
+.messageRight {
     float: right;
     text-align: right;
     filter: opacity(50);
@@ -178,7 +178,7 @@
     overflow: auto;
 }
 
-#send_button {
+#sendButton {
     display: flex;
     justify-content: center;
     align-items: center;

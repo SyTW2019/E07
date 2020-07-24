@@ -21,7 +21,7 @@
     color: #828282;
   }
 
-.app_name {
+.appName {
     margin-bottom: 7vh;
     text-transform: uppercase;
     font-family: verdana;
@@ -95,7 +95,7 @@ input {
     margin: 1.5vh;
 }
 
-.register_button
+.registerButton
 {
     margin-bottom: 1vh;
     margin-top: 2vh;
@@ -112,7 +112,7 @@ input {
 
 /****************** Google Register ******************/
 
-.google_register
+.googleRegister
 {
     width: 13vh;
     height: inherit;
@@ -152,7 +152,7 @@ span.label
     height: 2.5vh;
 }
 
-.google_register:hover {
+.googleRegister:hover {
     background-color: #ff4b4b;
     border-color: #ff4b4b;
     cursor: pointer;
@@ -180,7 +180,7 @@ span.label
     color: white;
 }
 
-.facebook_register
+.facebookRegister
 {
     width: 13vh;
     height: inherit;
@@ -195,7 +195,7 @@ span.label
     align-items: center;
 }
 
-.facebook_register:hover {
+.facebookRegister:hover {
     background-color: #4668c2;
     border-color: #4668c2;
     cursor: pointer;

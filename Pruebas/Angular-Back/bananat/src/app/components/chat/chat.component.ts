@@ -60,7 +60,7 @@ export class ChatComponent {
   }
   
   autoScroll() {
-    const chat = document.querySelector('#chat_history');
+    const chat = document.querySelector('#chatHistory');
     chat.scrollTop = chat.scrollHeight;
   }
 }
