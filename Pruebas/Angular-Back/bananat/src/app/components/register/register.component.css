@@ -114,7 +114,10 @@ input {
 
 .googleRegister
 {
-    width: 13vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 14vh;
     height: inherit;
     border-radius: 0.5vh;
     border-style: solid;
@@ -122,9 +125,6 @@ input {
     border-color: #db4242;
     background-color: #db4242;
     margin: 1vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }
 
 #googleCustomBtn
@@ -182,7 +182,11 @@ span.label
 
 .facebookRegister
 {
-    width: 13vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 14vh;
     height: inherit;
     border-radius: 0.5vh;
     border-style: solid;
@@ -190,9 +194,6 @@ span.label
     border-color: #38539B;
     background-color: #38539B;
     margin: 1vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }
 
 .facebookRegister:hover {
