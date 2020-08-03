@@ -19,14 +19,16 @@ describe('workspace-project App', () => {
 			last: 	'test2',
 			email: 	'test12@gmail.com',
 			pass: 	'e2etesting',
-			usr:	'brianchachi2'
+			username: 'userTest'
 		},
 		
    		receiver = {
 			name: 	'End2End Receiver',
 			last: 	'pepito',
 			email: 	'e2ereceiver@netchat.com',
-			pass: 	'e2etesting'
+			pass: 	'e2etesting',
+			username: 'receiver'
+
 		},
 
     	path = require( 'path' );
@@ -42,26 +44,26 @@ describe('workspace-project App', () => {
 			expect( browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
 	  	});
 
-            
-		//it ('fallo de  login',function(){
-			//browser.get('http://localhost:4200/login');
-			//username.sendKeys('admin');
-			//password.sendKeys('fail');
-			//loginButton.click().then( function(){		
-				//var popup= element(by.css('.popup-container.error-popup'));
-				//expect(popup.isDisplayed()).toBeTruthy();
-			//});
-		//});
-
+/*
+		it ('fallo de  login',function(){
+			browser.get('http://localhost:4200/login');
+			username.sendKeys('admin');
+			password.sendKeys('fail');
+			loginButton.click().then( function(){		
+				var popup= element(by.css('.popup-container.error-popup'));
+				expect(popup.isDisplayed()).toBeTruthy();
+			});
+		});
+*/
 		it ('Crear un usuario de prueba', function () {   
 			browser.get('http://localhost:4200/register' );
 			element( by.id( 'first_name' ) ).sendKeys(usertest.name );
 			element( by.id( 'surname' ) ).sendKeys(usertest.last );
-			element( by.id( 'email' ) ).sendKeys(usertest.email );
 			element( by.id( 'password' ) ).sendKeys( usertest.pass );
-			element( by.id( 'username' ) ).sendKeys( usertest.usr );
+			element( by.id( 'email' ) ).sendKeys(usertest.email );
+			element( by.id( 'username') ).sendKeys( usertest.username );
 			element( by.buttonText( 'Registrarse' ) ).click();	
-			browser.sleep(4000);
+			browser.sleep(2000);
 			
 			expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
 	    });
