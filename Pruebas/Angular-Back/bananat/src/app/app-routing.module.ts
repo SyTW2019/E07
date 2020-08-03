@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// Componentes
 import { LoginComponent } from './components/login/login.component';
 import { ChatComponent } from './components/chat/chat.component'
 import { RegisterComponent } from './components/register/register.component'
