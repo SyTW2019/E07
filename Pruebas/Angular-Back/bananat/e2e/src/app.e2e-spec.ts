@@ -15,24 +15,24 @@ describe('workspace-project App', () => {
 	describe('Banannat App', function() {
 
 		var user       = {
-			name    : 'test1123',
-			last     : ' test2',
-			email   : 'test1@gmail.com',
-			pass    : 'e2etesting',
-			bdate : '1232'
+			name: 	'test1123',
+			last: 	'test2',
+			email: 	'test1@gmail.com',
+			pass: 	'e2etesting',
+			bdate: 	'1232'
 		},
 		
    		receiver    = {
-			name    : 'End2End Receiver',
-			last:       'pepito',
-			email   : 'e2ereceiver@netchat.com',
-			pass    : 'e2etesting',
-			bdate: '1234'
+			name: 	'End2End Receiver',
+			last: 	'pepito',
+			email: 	'e2ereceiver@netchat.com',
+			pass: 	'e2etesting',
+			bdate: 	'1234'
 		},
 
     	path = require( 'path' );
 
-		it('should have a title login', function() {
+		it('El titulo de la plataforma', function() {
 			browser.get('http://localhost:4200/login');
 			expect(browser.getTitle()).toEqual('Bananat');
 		});
@@ -48,7 +48,7 @@ describe('workspace-project App', () => {
 			browser.get('http://localhost:4200/login');
 			username.sendKeys('admin');
 			password.sendKeys('fail');
-			loginButton.click().then(function(){		
+			loginButton.click().then( function(){		
 				var popup= element(by.css('.popup-container.error-popup'));
 				expect(popup.isDisplayed()).toBeTruthy();
 			});
@@ -59,12 +59,12 @@ describe('workspace-project App', () => {
 			element( by.id( 'email_field' ) ).sendKeys('brianftete@gmail.com');
 			element( by.id( 'password_field' ) ).sendKeys('Brianfutbol1998');
 			element( by.buttonText( 'Iniciar Sesión' ) ).click();
-				expect(browser.getCurrentUrl()).toBe('http://localhost:4200/login');
-
+			
+			expect(browser.getCurrentUrl()).toBe('http://localhost:4200/login');
 		});
 
 
-		it ( 'should create a sender user for testing purposes', function () {   
+		it ('Crear un usuario de prueba', function () {   
 			browser.get('http://localhost:4200/register' );
 			element( by.id( 'first_name' ) ).sendKeys(user.name );
 			element( by.id( 'last_name' ) ).sendKeys(user.last );
@@ -80,20 +80,20 @@ describe('workspace-project App', () => {
 
 
 
-  it ( 'Prueba del nombre de la etiqueta nombre', function () {
+		it ( 'Prueba del nombre de la etiqueta nombre', function () {
 
-                browser.get('http://localhost:4200/register' );
-		var  labelName = element(by.name('name'));
-   		expect(labelName.getText()).toBe('');
-        });
+			browser.get('http://localhost:4200/register' );
+			var  labelName = element(by.name('name'));
+			expect(labelName.getText()).toBe('');
+		});
 
- });
+	});
 
-  afterEach(async () => {
+	afterEach(async () => {
     // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
-  });
+	    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
+	    expect(logs).not.toContain(jasmine.objectContaining({
+	    	level: logging.Level.SEVERE,
+	    } as logging.Entry));
+	});
 });
