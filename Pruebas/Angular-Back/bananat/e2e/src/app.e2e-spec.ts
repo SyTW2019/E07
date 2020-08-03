@@ -4,82 +4,78 @@ import {by, element} from 'protractor';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 
 
- var username, password, loginButton;
+var username, password, loginButton;
 describe('workspace-project App', () => {
-  let page: AppPage;
-  
+	let page: AppPage;
 	
-	  beforeEach(() => {
-	
-	 page = new AppPage();
-       });
+	beforeEach(() => {
+		page = new AppPage();
+    });
 
 	describe('Banannat App', function() {
 
 		var user       = {
-   				 name    : 'test1123',
-				last     : ' test2',
- 			  	 email   : 'test1@gmail.com',
-			   	 pass    : 'e2etesting',
-				bdate : '1232'
-				},
+			name    : 'test1123',
+			last     : ' test2',
+			email   : 'test1@gmail.com',
+			pass    : 'e2etesting',
+			bdate : '1232'
+		},
 		
-   		 receiver    = {
-   				 name    : 'End2End Receiver',
-				last:       'pepito',
-  				  email   : 'e2ereceiver@netchat.com',
-   				 pass    : 'e2etesting',
-				bdate: '1234'
-				},
+   		receiver    = {
+			name    : 'End2End Receiver',
+			last:       'pepito',
+			email   : 'e2ereceiver@netchat.com',
+			pass    : 'e2etesting',
+			bdate: '1234'
+		},
 
-    path        = require( 'path' );
+    	path = require( 'path' );
 
-	 it('should have a title login', function() {
-   		 browser.get('http://localhost:4200/login');
-  		 expect(browser.getTitle()).toEqual('Bananat');
-	 });
+		it('should have a title login', function() {
+			browser.get('http://localhost:4200/login');
+			expect(browser.getTitle()).toEqual('Bananat');
+		});
 
 	
-	it('Url al abrir la aplicación', function() {
-   		browser.get('http://localhost:4200/login');
-		 expect( browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
-  	});
+		it('Url al abrir la aplicación', function() {
+			browser.get('http://localhost:4200/login');
+			expect( browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
+	  	});
 
 
-	it ('fallo de  login',function(){
-		browser.get('http://localhost:4200/login');
-		username.sendKeys('admin');
-		password.sendKeys('fail');
-		loginButton.click().then(function(){		
-			var popup= element(by.css('.popup-container.error-popup'));
-			expect(popup.isDisplayed()).toBeTruthy();
+		it ('fallo de  login',function(){
+			browser.get('http://localhost:4200/login');
+			username.sendKeys('admin');
+			password.sendKeys('fail');
+			loginButton.click().then(function(){		
+				var popup= element(by.css('.popup-container.error-popup'));
+				expect(popup.isDisplayed()).toBeTruthy();
+			});
 		});
-	});
 
-	it ('usuario creado',function() {
-		browser.get('http://localhost:4200/login');
-		element( by.id( 'email_field' ) ).sendKeys('brianftete@gmail.com');
-		element( by.id( 'password_field' ) ).sendKeys('Brianfutbol1998');
-		element( by.buttonText( 'Iniciar Sesión' ) ).click();
-			expect(browser.getCurrentUrl()).toBe('http://localhost:4200/login');
+		it ('usuario creado',function() {
+			browser.get('http://localhost:4200/login');
+			element( by.id( 'email_field' ) ).sendKeys('brianftete@gmail.com');
+			element( by.id( 'password_field' ) ).sendKeys('Brianfutbol1998');
+			element( by.buttonText( 'Iniciar Sesión' ) ).click();
+				expect(browser.getCurrentUrl()).toBe('http://localhost:4200/login');
 
-	});
+		});
 
 
-	it ( 'should create a sender user for testing purposes', function () {
-        
-		browser.get('http://localhost:4200/register' );
-
-            element( by.id( 'first_name' ) ).sendKeys(user.name );
-	    element( by.id( 'last_name' ) ).sendKeys(user.last );
-            element( by.id( 'email' ) ).sendKeys(user.email );
-            element( by.id( 'password' ) ).sendKeys( user.pass );
-	    element( by.id( 'bdate') ).sendKeys( user.bdate );
-            element( by.buttonText( 'Registrarse' ) ).click();	
-		browser.sleep(4000);
-                expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/register' );
-         
-        });
+		it ( 'should create a sender user for testing purposes', function () {   
+			browser.get('http://localhost:4200/register' );
+			element( by.id( 'first_name' ) ).sendKeys(user.name );
+			element( by.id( 'last_name' ) ).sendKeys(user.last );
+			element( by.id( 'email' ) ).sendKeys(user.email );
+			element( by.id( 'password' ) ).sendKeys( user.pass );
+			element( by.id( 'bdate') ).sendKeys( user.bdate );
+			element( by.buttonText( 'Registrarse' ) ).click();	
+			browser.sleep(4000);
+			
+			expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/register' );
+	    });
 
 
 
