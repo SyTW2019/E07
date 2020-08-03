@@ -14,7 +14,7 @@ describe('workspace-project App', () => {
 
 	describe('Banannat App', function() {
 
-		var user       = {
+		var usertest = {
 			name: 	'test1123',
 			last: 	'test2',
 			email: 	'test1@gmail.com',
@@ -22,7 +22,7 @@ describe('workspace-project App', () => {
 			bdate: 	'1232'
 		},
 		
-   		receiver    = {
+   		receiver = {
 			name: 	'End2End Receiver',
 			last: 	'pepito',
 			email: 	'e2ereceiver@netchat.com',
@@ -31,15 +31,15 @@ describe('workspace-project App', () => {
 		},
 
     	path = require( 'path' );
+    	browser.get('http://localhost:4200/');
 
 		it('El titulo de la plataforma', function() {
-			browser.get('http://localhost:4200/login');
 			expect(browser.getTitle()).toEqual('Bananat');
 		});
 
 	
 		it('Url al abrir la aplicación', function() {
-			browser.get('http://localhost:4200/login');
+			//browser.get('http://localhost:4200/login');
 			expect( browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
 	  	});
 
@@ -54,23 +54,13 @@ describe('workspace-project App', () => {
 			});
 		});
 
-		it ('usuario creado',function() {
-			browser.get('http://localhost:4200/login');
-			element( by.id( 'email_field' ) ).sendKeys('brianftete@gmail.com');
-			element( by.id( 'password_field' ) ).sendKeys('Brianfutbol1998');
-			element( by.buttonText( 'Iniciar Sesión' ) ).click();
-			
-			expect(browser.getCurrentUrl()).toBe('http://localhost:4200/login');
-		});
-
-
 		it ('Crear un usuario de prueba', function () {   
 			browser.get('http://localhost:4200/register' );
-			element( by.id( 'first_name' ) ).sendKeys(user.name );
-			element( by.id( 'last_name' ) ).sendKeys(user.last );
-			element( by.id( 'email' ) ).sendKeys(user.email );
-			element( by.id( 'password' ) ).sendKeys( user.pass );
-			element( by.id( 'bdate') ).sendKeys( user.bdate );
+			element( by.id( 'first_name' ) ).sendKeys(usertest.name );
+			element( by.id( 'last_name' ) ).sendKeys(usertest.last );
+			element( by.id( 'email' ) ).sendKeys(usertest.email );
+			element( by.id( 'password' ) ).sendKeys( usertest.pass );
+			element( by.id( 'bdate') ).sendKeys( usertest.bdate );
 			element( by.buttonText( 'Registrarse' ) ).click();	
 			browser.sleep(4000);
 			
@@ -78,6 +68,14 @@ describe('workspace-project App', () => {
 	    });
 
 
+		it ('Comprobar el usuario creado',function() {
+			browser.get('http://localhost:4200/login');
+			element( by.id( 'email_field' ) ).sendKeys(usertest.email);
+			element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
+			element( by.buttonText( 'Iniciar Sesión' ) ).click();
+			
+			expect(browser.getCurrentUrl()).toBe('http://localhost:4200/login');
+		});
 
 
 		it ( 'Prueba del nombre de la etiqueta nombre', function () {
