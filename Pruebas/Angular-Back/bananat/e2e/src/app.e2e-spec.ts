@@ -15,19 +15,18 @@ describe('workspace-project App', () => {
 	describe('Banannat App', function() {
 
 		var usertest = {
-			name: 	'test1123',
+			name: 	'test11323',
 			last: 	'test2',
-			email: 	'test1@gmail.com',
+			email: 	'test12@gmail.com',
 			pass: 	'e2etesting',
-			bdate: 	'1232'
+			usr:	'brianchachi2'
 		},
 		
    		receiver = {
 			name: 	'End2End Receiver',
 			last: 	'pepito',
 			email: 	'e2ereceiver@netchat.com',
-			pass: 	'e2etesting',
-			bdate: 	'1234'
+			pass: 	'e2etesting'
 		},
 
     	path = require( 'path' );
@@ -43,38 +42,38 @@ describe('workspace-project App', () => {
 			expect( browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
 	  	});
 
-
-		it ('fallo de  login',function(){
-			browser.get('http://localhost:4200/login');
-			username.sendKeys('admin');
-			password.sendKeys('fail');
-			loginButton.click().then( function(){		
-				var popup= element(by.css('.popup-container.error-popup'));
-				expect(popup.isDisplayed()).toBeTruthy();
-			});
-		});
+            
+		//it ('fallo de  login',function(){
+			//browser.get('http://localhost:4200/login');
+			//username.sendKeys('admin');
+			//password.sendKeys('fail');
+			//loginButton.click().then( function(){		
+				//var popup= element(by.css('.popup-container.error-popup'));
+				//expect(popup.isDisplayed()).toBeTruthy();
+			//});
+		//});
 
 		it ('Crear un usuario de prueba', function () {   
 			browser.get('http://localhost:4200/register' );
 			element( by.id( 'first_name' ) ).sendKeys(usertest.name );
-			element( by.id( 'last_name' ) ).sendKeys(usertest.last );
+			element( by.id( 'surname' ) ).sendKeys(usertest.last );
 			element( by.id( 'email' ) ).sendKeys(usertest.email );
 			element( by.id( 'password' ) ).sendKeys( usertest.pass );
-			element( by.id( 'bdate') ).sendKeys( usertest.bdate );
+			element( by.id( 'username' ) ).sendKeys( usertest.usr );
 			element( by.buttonText( 'Registrarse' ) ).click();	
 			browser.sleep(4000);
 			
-			expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/register' );
+			expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
 	    });
 
 
 		it ('Comprobar el usuario creado',function() {
 			browser.get('http://localhost:4200/login');
-			element( by.id( 'email_field' ) ).sendKeys(usertest.email);
+			element( by.id( 'user_field' ) ).sendKeys(usertest.email);
 			element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
 			element( by.buttonText( 'Iniciar Sesión' ) ).click();
 			
-			expect(browser.getCurrentUrl()).toBe('http://localhost:4200/login');
+			expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
 		});
 
 
