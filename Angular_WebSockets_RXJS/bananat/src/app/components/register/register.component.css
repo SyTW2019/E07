@@ -69,10 +69,6 @@ section .register:before {
     margin-right: 20px;
 }
 
-.datepicker {
-    width: 80px;
-}
-
 .material-icons {
     height: 30px;
     margin: 25px;
@@ -118,10 +114,14 @@ input {
 
 .google_icon {
     height: 30px;
+    background-size: 80% 80%;
+    background-image: url("../../assets/img/google_icon.png") no-repeat;
 }
 
 .facebook_icon {
     height: 30px;
+    background-size: 80% 80%;
+    background-image: url("../../assets/img/facebook_icon.png") no-repeat;
 }
 
 .facebook_register {

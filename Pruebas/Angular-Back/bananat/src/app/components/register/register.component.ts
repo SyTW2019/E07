@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../../service/users/users.service'
+import { UsersService } from '../../service/users/users.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,23 +10,23 @@ import { UsersService } from '../../service/users/users.service'
 })
 export class RegisterComponent implements OnInit {
 
-  public mail:string
-  public pwd:string
-  public name:string
-  public birthday:number
-  public surname:string
+  public mail:string;
+  public pwd:string;
+  public name:string;
+  public surname:string;
+  public username:string;
 
-  constructor(private _userSrv:UsersService) {}
+  constructor(private _userSrv:UsersService, private router:Router) {}
 
   ngOnInit() {
   }
 
   register() {
-  	this._userSrv.register(this.mail, this.name, this.surname, this.pwd, this.birthday).subscribe(response => {
-  		console.log("Register: OK!")
+  	this._userSrv.register(this.mail, this.name, this.surname, this.pwd, this.username).subscribe(response => {
+      console.log("Register: OK!");
+      this.router.navigate(['/login']);
   	}, error => {
-  		console.error(error)
+  		console.error(error);
   	})
   }
-
 }

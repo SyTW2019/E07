@@ -1,3 +1,11 @@
+@media screen and (min-width: 375px) {
+
+    .register {
+
+        background-color: purple;
+    }
+}
+
 ::ng-deep .body {
     margin: 0;
     padding: 0;
@@ -9,139 +17,196 @@
     background-attachment: fixed;
 }
 
-.app_name {
+::placeholder {
+    color: #828282;
+  }
+
+.appName {
+    margin-bottom: 7vh;
     text-transform: uppercase;
     font-family: verdana;
     font-size: 3em;
     font-weight: 700;
     color: #f5f5f5;
-    text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191, 1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191, 1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191, 1px 10px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
+    text-shadow: 0.1vh 0.1vh 0.1vh #919191, 0.1vh 0.2vh 0.1vh #919191, 0.1vh 0.3vh 0.1vh #919191, 0.1vh 0.4vh 0.1vh #919191, 0.1vh 0.5vh 0.1vh #919191, 0.1vh 0.6vh 0.1vh #919191, 0.1vh 0.7vh 0.1vh #919191, 0.1vh 0.8vh 0.1vh #919191, 0.1vh 0.9vh 0.1vh #919191, 0.1vh 1vh 0.1vh #919191, 0.1vh 1.8vh 0.6vh rgba(16, 16, 16, 0.4), 0.1vh 2.2vh 1vh rgba(16, 16, 16, 0.2), 0.1vh 2.5vh 3.5vh rgba(16, 16, 16, 0.2), 0.1vh 3vh 6vh rgba(16, 16, 16, 0.4);
     text-align: center;
 }
 
 section {
-    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
-    width: 500px;
-    padding-bottom: 70px;
+    width: 100vw;
 }
 
-section .register {
-    position: relative;
-    min-width: 80%;
-    padding: 0px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-    border-radius: 12px;
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 40vh;
+    box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, .5);
+    border-radius: 1.2vh;
     color: #000;
-   
+    overflow: hidden;
+    background-color: white;
 }
 
-section .register:before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background-image: url("../../assets/img/full_login_background.jpg");
-    background-attachment: fixed;
-    filter: blur(15px);
-}
-
-.col {
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
     position: relative;
-    padding-left: 10px;
+    padding-left: 1vh;
     z-index: 2;
-    margin: 15px;
-    width: 400px;
 }
 
 .input-field label {
     color: black;
 }
 
-.row {
+.field {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-right: 20px;
-}
-
-.datepicker {
-    width: 80px;
+    margin-right: 2vh;
+    width: 100%;
 }
 
 .material-icons {
-    height: 30px;
-    margin: 25px;
+    height: 3vh;
+    margin: 2.5vh;
     color: black;
     z-index: 2;
-    /* No funciona */
 }
 
 input {
     position: relative;
-    padding-left: 10px;
+    padding-left: 1vh;
     z-index: 2;
-    border-width: 2px;
+    border-width: 0.2vh;
     border-color: black;
     border-style: solid;
-    border-radius: 5px;
-    margin: 15px;
-    width: 400px;
+    border-radius: 0.5vh;
+    margin: 1.5vh;
 }
 
-.register_button {
+.registerButton
+{
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+}
+
+.socialnetworkregister.flex-container
+{
+    height: 4vh;
+    width: 80%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.google_register {
-    width: 130px;
-    height: 55px;
+/****************** Google Register ******************/
+
+.googleRegister
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 14vh;
+    height: inherit;
+    border-radius: 0.5vh;
     border-style: solid;
-    border-width: 2px;
-    border-color: #d43a00;
-    background-color: #d43a00;
-    margin-left: 70px;
-    margin-top: -20px;
+    border-width: 0.2vh;
+    border-color: #db4242;
+    background-color: #db4242;
+    margin: 1vh;
 }
 
-.google_register:hover {
-    background-color: #ff4600;
-    border-color: #ff4600;
+#googleCustomBtn
+{
+    width: 9vh;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#googleCustomBtn:hover
+{
+    cursor: pointer;
+}
+
+span.label
+{
+    font-family: serif;
+    font-weight: normal;
+}
+
+.GIcon
+{
+    background: url("../../assets/img/google_icon.png")  no-repeat;
+    height: 2.5vh;
+}
+
+.googleRegister:hover {
+    background-color: #ff4b4b;
+    border-color: #ff4b4b;
     cursor: pointer;
     transition: 0.4s;
 }
 
-.google_icon {
-    height: 30px;
+/*******************************************************/ 
+
+
+
+/****************** Facebook Register ******************/
+
+.fbIcon
+{
+    height: 2.5vh;
+    filter: invert(100%);
+    background-image: url("../../assets/img/facebook_icon.png") no-repeat;
 }
 
-.facebook_icon {
-    height: 30px;
+#facebookCustomBtn
+{
+    width: 9vh;
+    display: flex;
+    justify-content: center;
+    color: white;
 }
 
-.facebook_register {
-    width: 130px;
-    height: 55px;
+.facebookRegister
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 14vh;
+    height: inherit;
+    border-radius: 0.5vh;
     border-style: solid;
-    border-width: 2px;
-    margin-top: -20px;
+    border-width: 0.2vh;
     border-color: #38539B;
     background-color: #38539B;
-    margin-left: 15px;
+    margin: 1vh;
 }
 
-.facebook_register:hover {
+.facebookRegister:hover {
     background-color: #4668c2;
     border-color: #4668c2;
     cursor: pointer;
     transition: 0.4s;
 }
 
+<<<<<<< HEAD
 h1 {
     margin-bottom: 10%;
 }
+=======
+/*******************************************************/
+>>>>>>> pruebas

@@ -1,34 +1,34 @@
 <div class="container">
     <div class="row">
-        <div class="col s12 m5 blur" id="div_login">
-            <h1 class="app_name" tabindex="0">BANANAT</h1>
+        <div class="col s12 m5 blur" id="divLogin">
+            <h1 class="appName" tabindex="0">BANANAT</h1>
             <form class="col s12" id="userForm">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="medium material-icons prefix">email</i>
-                        <input id="email_field" type="text" class="validate" [(ngModel)]="mail" name="mail">
-                        <label for="email">Email</label>
+                        <input id="user_field" type="text" class="validate" [(ngModel)]="user" name="user">
+                        <label for="user_field">Email o Usuario</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="medium material-icons prefix">enhanced_encryption</i>
                         <input id="password_field" type="password" class="validate" [(ngModel)]="pwd" name="pwd">
-                        <label for="password">Contraseña</label>
+                        <label for="password_field">Contraseña</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s12 push-s3">
+                    <div class="col s12" id="loginButtomContainer">
                         <button class="btn waves-effect waves-light btn-small" type="submit" name="Login" (click)="login()">Iniciar Sesión
                         </button>
   
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s6" id="register_option">
+                    <div class="col s6" id="registerOption">
                         <a tabindex="0" [routerLink]="['/register']">¿No tiene cuenta aún? Regístrese</a>
                     </div>
-                    <div class="col s6" id="forgotten_password_option">
+                    <div class="col s6" id="forgottenPasswordOption">
                         <a tabindex="0">¿Ha olvidado su contraseña?</a>
                     </div>
                 </div>

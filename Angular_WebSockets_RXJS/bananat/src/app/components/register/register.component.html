@@ -28,27 +28,28 @@
                 </div>
             </div>
             <div class="row">
-                <i class="material-icons">date_range</i>
+                <i class="material-icons">text_fields</i>
                 <div class="input-field s6 m6 l6">
-                    <input type=text name="bdate" id="bdate" class="datepicker" required>
-                    <label for="bdate">Birthday</label>
+                    <textarea id="textarea2" class="materialize-textarea" data-length="10"></textarea>
+                    <label for="textarea2">Nombre de usuario</label>
                 </div>
 
             </div>
             <div class="row">
                 <button class="google_register" type="submit">
-                        <img class="google_icon">
+                    <!--<img src="../../assets/img/google_icon.png" class="google_icon" alt="google icon">-->
+                    <img src="google_icon.png" class="google_icon" alt="google icon">
+                </button>
 
-                    </button>
                 <button class="facebook_register" type="submit">
-                        <img class="facebook_icon">
-                    </button>
+                    <img src="facebook_icon.png" class="facebook_icon" alt="fb icon">
+                </button>
             </div>
 
             <div class="row register_button">
                 <button class="btn waves-effect waves-light" type="submit" name="action">
                         Registrarse                            
-                    </button>
+                </button>
 
             </div>
 
@@ -57,12 +58,9 @@
     </div>
 </section>
 
+<script> /* Función para contar caracteres del campo de nickname del register */
 
-
-
-<script>
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year,
+    $(document).ready(function() {
+        $('input#input_text, textarea#textarea2').characterCounter();
     });
 </script>

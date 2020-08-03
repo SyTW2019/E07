@@ -1,28 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { map } from 'rxjs/operators'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsersService {
 
   constructor(private net:HttpClient) {}
 
-  register(mail: string, name: string, surname: string, pwd: string, birthday: number) {
+  register(mail: string, name: string, surname: string, pwd: string, username: string) {
   	return this.net.post("http://localhost:4300/api/v1/users/register", {
-  		user: name + surname,
+  		user: name + ' ' + surname,
   		mail: mail,
-  		password: pwd,
-  		birthday: birthday
-  	})
+      password: pwd,
+      username: username
+  	});
   }
 
-  login(mail: string, pwd: string) {
+  login(user: string, pwd: string) {
     return this.net.post("http://localhost:4300/api/v1/users/login", {
-      mail: mail,
+      user: user,
       password: pwd
-    })
+    });
   }
 }
 
