@@ -155,6 +155,77 @@ describe('workspace-project App', () => {
 
 	});
 
+	 describe('Test formulario de Registro', function() {
+
+
+                 it('Comprobar el encabezado h1 de la pagina register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var h1element = element(by.css('.appName'));
+                        expect(h1element.getText()).toBe('BANANAT');
+                });
+
+		it('La existencia de un formulario de register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var formulario = element(by.css('.register .formulario'));
+                        expect(formulario.isPresent()).toBe(true);
+                });
+
+		 it('La existencia de un campo nombre',function(){
+                        browser.get('http://localhost:4200/register');
+                        var nom = element(by.id('first_name'));
+                        expect(nom.isPresent()).toBe(true);
+                });
+
+		it('La existencia de un campo apellidos',function(){
+                        browser.get('http://localhost:4200/register');
+                        var ape = element(by.id('surname'));
+                        expect(ape.isPresent()).toBe(true);
+                });
+
+		it('La existencia de un campo email',function(){
+                        browser.get('http://localhost:4200/register');
+                        var em = element(by.id('email'));
+                        expect(em.isPresent()).toBe(true);
+                });
+
+
+                it('La existencia de un campo contraseña',function(){
+                        browser.get('http://localhost:4200/register');
+                        var pw = element(by.id('password'));
+                        expect(pw.isPresent()).toBe(true);
+		});
+
+		 it('La existencia de un campo Nombre de usuario',function(){
+                        browser.get('http://localhost:4200/register');
+                        var nu = element(by.id('username'));
+                        expect(nu.isPresent()).toBe(true);
+                });
+
+		it('Boton de registrarse',function(){
+                        browser.get('http://localhost:4200/register');
+                        var btn = element(by.name('action'));
+                        expect(btn.isPresent()).toBe(true);
+               });
+		
+		it('Boton de registrarse mediante google',function(){
+                        browser.get('http://localhost:4200/register');
+                        var btnG = element(by.css('.googleRegister'));
+                        expect(btnG.isPresent()).toBe(true);
+                        expect(btnG.getText()).toBe('Google');
+               });
+
+		it('Boton de registrarse mediante Facebook',function(){
+                        browser.get('http://localhost:4200/register');
+                        var btnF = element(by.css('.facebookRegister'));
+                        expect(btnF.isPresent()).toBe(true);
+                        expect(btnF.getText()).toBe('Facebook');
+               });
+
+
+
+
+	});
+
 	afterEach(async () => {
     // Assert that there are no errors emitted from the browser
 	    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
