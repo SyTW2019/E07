@@ -221,6 +221,58 @@ describe('workspace-project App', () => {
                         expect(btnF.getText()).toBe('Facebook');
                });
 
+	});
+
+	 describe('Test para incluir iconos en cada campo', function() {
+
+
+                 it('Icono de usuario en login',function(){
+                        browser.get('http://localhost:4200/login');
+                        var icp = element(by.id('il-mensaje'));
+			expect(icp.isPresent()).toBe(true);
+                });
+
+		it('Icono de password  en login',function(){
+                        browser.get('http://localhost:4200/login');
+                        var icc = element(by.id('il-candado'));
+                        expect(icc.isPresent()).toBe(true);
+                });
+
+		it('Icono de usuario en register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var icpe = element(by.id('ir-persona'));
+                        expect(icpe.isPresent()).toBe(true);
+                });
+
+		it('Icono de password en register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var icpass = element(by.id('ir-candado'));
+                        expect(icpass.isPresent()).toBe(true);
+                });
+
+		it('Icono de correo en register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var iccor = element(by.id('ir-mensaje'));
+                        expect(iccor.isPresent()).toBe(true);
+                });
+		
+		it('Icono de Nombre de usuario  en register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var icnu = element(by.id('ir-nu'));
+                        expect(icnu.isPresent()).toBe(true);
+                });
+
+		it('Icono de google en register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var icG = element(by.css('.GIcon'));
+                        expect(icG.isPresent()).toBe(true);
+                });
+
+		it('Icono de facebook  en register',function(){
+                        browser.get('http://localhost:4200/register');
+                        var icF = element(by.css('.fbIcon'));
+                        expect(icF.isPresent()).toBe(true);
+                });
 
 
 
