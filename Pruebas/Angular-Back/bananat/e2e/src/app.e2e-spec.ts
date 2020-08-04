@@ -86,6 +86,48 @@ describe('workspace-project App', () => {
 			expect(labelName.getText()).toBe('');
 		});
 
+		 it('Comprobar el encabezado h1 de la pagina login',function(){
+                        browser.get('http://localhost:4200/login');
+                        var h1element = element(by.css('.appName'));
+                        expect(h1element.getText()).toBe('BANANAT');
+                });
+
+                 it('La existencia de un formulario de login',function(){
+                        browser.get('http://localhost:4200/login');
+                        var formulario = element(by.id('userForm'));
+                        expect(formulario.isPresent()).toBe(true);
+                });
+
+                it('La existencia de un campo email',function(){
+                        browser.get('http://localhost:4200/login');
+                        var em = element(by.id('user_field'));
+                        expect(em.isPresent()).toBe(true);
+                });
+
+                it('La existencia de un campo contraseña',function(){
+                        browser.get('http://localhost:4200/login');
+                        var pw = element(by.id('password_field'));
+                        expect(pw.isPresent()).toBe(true);
+                });
+
+                it('Boton de loguearse',function(){
+                        browser.get('http://localhost:4200/login');
+                        var btn = element(by.name('Login'));
+                        expect(btn.isPresent()).toBe(true);
+                        expect(btn.getText()).toBe('INICIAR SESIÓN');
+                });
+
+                 it('Redirección a registro',function(){
+                        browser.get('http://localhost:4200/login');
+                        var cuenta = element(by.id('registerOption'));
+                        expect(cuenta.isPresent()).toBe(true);
+                        expect(element(by.linkText('¿No tiene cuenta aún? Regístrese')).getTagName()).toBe('a');
+                        element(by.linkText('¿No tiene cuenta aún? Regístrese')).click();
+                        browser.sleep(4000);
+                         expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/register' );
+                });
+
+
 	});
 
 	afterEach(async () => {
