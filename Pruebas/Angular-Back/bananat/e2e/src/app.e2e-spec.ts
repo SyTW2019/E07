@@ -10,29 +10,9 @@ describe('workspace-project App', () => {
 	
 	beforeEach(() => {
 		page = new AppPage();
-    });
+         });
 
-	describe('Banannat App', function() {
-
-		var usertest = {
-			name: 	'test11323',
-			last: 	'test2',
-			email: 	'test12@gmail.com',
-			pass: 	'e2etesting',
-			username: 'userTest'
-		},
-		
-   		receiver = {
-			name: 	'End2End Receiver',
-			last: 	'pepito',
-			email: 	'e2ereceiver@netchat.com',
-			pass: 	'e2etesting',
-			username: 'receiver'
-
-		},
-
-    	path = require( 'path' );
-    	browser.get('http://localhost:4200/');
+	describe('Test básicos', function() {
 
 		it('El titulo de la plataforma', function() {
 			expect(browser.getTitle()).toEqual('Bananat');
@@ -43,6 +23,40 @@ describe('workspace-project App', () => {
 			//browser.get('http://localhost:4200/login');
 			expect( browser.getCurrentUrl()).toEqual('http://localhost:4200/login');
 	  	});
+
+		it ( 'Prueba del nombre de la etiqueta nombre', function () {
+
+                        browser.get('http://localhost:4200/register' );
+                        var  labelName = element(by.name('name'));
+                        expect(labelName.getText()).toBe('');
+                });
+
+
+	});
+
+		
+	 describe('Test de registro e inicio de sesión', function() {
+
+		         var usertest = {
+                        name:   'test11323',
+                        last:   'test2',
+                        email:  'test12@gmail.com',
+                        pass:   'e2etesting',
+                        username: 'userTest'
+                },
+
+                receiver = {
+                        name:   'End2End Receiver',
+                        last:   'pepito',
+                        email:  'e2ereceiver@netchat.com',
+                        pass:   'e2etesting',
+                        username: 'receiver'
+
+                },
+
+		 path = require( 'path' );
+                browser.get('http://localhost:4200/');
+
 
 /*
 		it ('fallo de  login',function(){
@@ -78,13 +92,24 @@ describe('workspace-project App', () => {
 			expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
 		});
 
+		//it ('Borrar un usuario', function () {
+                       //db.removeUser(usertest.usr);
+           	// });
 
-		it ( 'Prueba del nombre de la etiqueta nombre', function () {
+		//it ('Comprobar el usuario borrado',function() {
+                       // browser.get('http://localhost:4200/login');
+                        //element( by.id( 'user_field' ) ).sendKeys(usertest.email);
+                        //element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
+                        //element( by.buttonText( 'Iniciar Sesión' ) ).click();
 
-			browser.get('http://localhost:4200/register' );
-			var  labelName = element(by.name('name'));
-			expect(labelName.getText()).toBe('');
-		});
+                        //expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
+               // });
+
+	});
+
+
+	 describe('Test formulario de inicio de sesión', function() {
+
 
 		 it('Comprobar el encabezado h1 de la pagina login',function(){
                         browser.get('http://localhost:4200/login');
