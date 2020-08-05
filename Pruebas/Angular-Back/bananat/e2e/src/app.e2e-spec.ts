@@ -97,13 +97,13 @@ describe('workspace-project App', () => {
            	// });
 
 		//it ('Comprobar el usuario borrado',function() {
-                       // browser.get('http://localhost:4200/login');
-                        //element( by.id( 'user_field' ) ).sendKeys(usertest.email);
-                        //element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
-                        //element( by.buttonText( 'Iniciar Sesión' ) ).click();
+	       // browser.get('http://localhost:4200/login');
+	        //element( by.id( 'user_field' ) ).sendKeys(usertest.email);
+	        //element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
+	        //element( by.buttonText( 'Iniciar Sesión' ) ).click();
 
-                        //expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
-               // });
+	        //expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
+        // });
 
 	});
 
