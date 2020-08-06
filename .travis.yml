@@ -34,4 +34,5 @@ addons:
 
 script:
   - sonar-scanner
+  - cd Pruebas/Angular-Back/bananat
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
