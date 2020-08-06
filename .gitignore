@@ -1,7 +1,6 @@
 
 # Añadidos para Septiembre
-data/*
-Pruebas/Angular-back/data/*
+**/data/**
 
 
 # Logs
