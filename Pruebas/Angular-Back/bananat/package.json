@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng e2e --port 4100",
-    "lint": "ng lint",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
