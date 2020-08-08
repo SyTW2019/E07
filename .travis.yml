@@ -34,5 +34,6 @@ notifications:
   slack: sytw:WVOowm9Fxyks9mdwi1V6m6io
 
 script:
-        #- sonar-scanner
-  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  #- sonar-scanner
+  #- npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - npm run test
