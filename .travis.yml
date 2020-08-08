@@ -5,9 +5,6 @@ language: node_js
 node_js:
   - '14'
 
-before_script: 
-  - npm install -g @angular/cli
-
 addons:
   apt:
     sources:
@@ -23,10 +20,12 @@ addons:
 cache:
   directories:
     - ./node_modules
+    
 before_install:
   - cd Pruebas/Angular-Back/bananat
 
 install:
+  #- npm install -g @angular/cli
   - npm install
 
 # Integración con Slack
