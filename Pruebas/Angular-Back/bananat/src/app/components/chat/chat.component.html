@@ -19,10 +19,10 @@
 
         <div class="col s12 valign-wrapper" id="chatMessageBar">
             <div class="col s11 valign-wrapper" id="boxMessage">
-                <textarea id="message" rows="10" cols="50" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage(user, message)">{{ message }}</textarea>
+                <textarea id="message" rows="10" cols="50" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage(username, message)">{{ message }}</textarea>
             </div>
             <div class="col s1" id="submitButton">
-                <button (click)="sendMessage(user, message)" id="sendButton" class="btn-block btn-small waves-effect waves-light" type="submit"><i class="material-icons">send</i></button>
+                <button (click)="sendMessage(username, message)" id="sendButton" class="btn-block btn-small waves-effect waves-light" type="submit"><i class="material-icons">send</i></button>
             </div>
         </div>
     </div>
