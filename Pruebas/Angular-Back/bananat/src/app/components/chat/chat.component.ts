@@ -1,6 +1,6 @@
 import { WebsocketService } from '../../service/websocket/websocket.service';
 import { ChatService } from '../../service/chat/chat.service';
-import { Component, Input, Output, ViewEncapsulation, OnChanges, SimpleChanges} from '@angular/core';
+import { Component, Input, Output, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
