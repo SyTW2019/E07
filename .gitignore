@@ -1,5 +1,5 @@
 # Añadidos para Septiembre
-data/
+**/data/**
 
 
 # Logs
@@ -65,3 +65,4 @@ typings/
 .next
 
 .DS_Store
+node_modules/*

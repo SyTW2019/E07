@@ -1,0 +1,29 @@
+<div class="containerPage">
+    <div class="logout">
+        <button class="btn waves-effect waves-light btn-small" name="Logout" (click)="logout()"><em class="material-icons">exit_to_app</em>
+        </button>
+    </div>
+    <div id="messageArea" class="row col s12">
+        <div class="col s12 valign-wrapper" id="chatHeader">
+            <div class="col s1" id="chatImage"></div>
+            <div class="col s10" id="chatName" [innerHTML]="username">
+                {{ username }}
+            </div>
+        </div>
+
+        <div class="col s12 messages" id="chatHistory">
+            <ul id="chat" [innerHTML]="htmlStr">
+                {{ htmlStr }}
+            </ul>
+        </div>
+
+        <div class="col s12 valign-wrapper" id="chatMessageBar">
+            <div class="col s11 valign-wrapper" id="boxMessage">
+                <textarea id="message" rows="10" cols="50" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage(username, message)">{{ message }}</textarea>
+            </div>
+            <div class="col s1" id="submitButton">
+                <button (click)="sendMessage(username, message)" id="sendButton" class="btn-block btn-small waves-effect waves-light" type="submit"><em class="material-icons">send</em></button>
+            </div>
+        </div>
+    </div>
+</div>

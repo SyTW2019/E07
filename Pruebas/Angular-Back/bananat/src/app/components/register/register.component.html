@@ -1,0 +1,57 @@
+<section>
+    <h1 class="appName" tabindex="0">BANANAT</h1>
+    <div class="register">
+        <form class="col s12 m12 l12 formulario">
+            <div class="row field">
+                <em class="material-icons" id="ir-persona">person</em>
+                <div class="namefield col s8 m8 l12">
+                    <input id="first_name" type="text" placeholder="Nombre" name="name" [(ngModel)]="name">
+                </div>
+                <div class="namefield col s8 m8 l12">
+                    <input id="surname" type="text" placeholder="Apellido" name="surname" [(ngModel)]="surname">
+                </div>
+            </div>
+            <div class="row field">
+                <em class="material-icons" id="ir-candado">enhanced_encryption</em>
+                <div class="input-field col s12 m12 l12">
+                    <input id="password" type="password" class="validate" placeholder="Contraseña" name="pwd" [(ngModel)]="pwd">
+                </div>
+            </div>
+            <div class="row field">
+                <em class="material-icons" id="ir-mensaje">email</em>
+                <div class="input-field col s12 m12 l12">
+                    <input id="email" type="email" class="validate" placeholder="Correo" name="mail" [(ngModel)]="mail">
+                </div>
+            </div>
+            <div class="row field">
+                <em class="material-icons" id="ir-nu">text_fields</em>
+                <div class="input-field col s12 m12 l12">
+                    <input id="username" type="text" class="validate" placeholder="Nombre de usuario" name="username" [(ngModel)]="username">
+                </div>
+
+            </div>
+        </form>
+        <div class="socialnetworkregister flex-container">
+            <button class="googleRegister" type="submit">
+                <img src="google_icon.png" class="GIcon" alt="google icon">
+                <div id="googleCustomBtn">
+                    <span class="buttonText">Google</span>
+                </div>
+            </button>
+
+            <button class="facebookRegister" type="submit">
+                <img src="facebook_icon.png" class="fbIcon" alt="fb icon">
+                <div id="facebookCustomBtn">
+                    <span class="buttonText">Facebook</span>
+                </div>
+            </button>
+        </div>
+
+        <div class="registerButton">
+            <button class="btn waves-effect waves-light" type="submit" name="action" (click)="register()">
+                    Registrarse                            
+            </button>
+
+        </div>
+    </div>
+</section>
