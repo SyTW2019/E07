@@ -43,17 +43,12 @@ a:hover {
 ::ng-deep .body {
     background-image: url("../../assets/img/full_login_background.jpg");
     background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
     background-repeat: no-repeat;
 }
 
 @media (max-width: 1000px) {
-    ::nd-deep .body {
-        background-image: url("../../assets/img/responsive_login_background.jpeg");
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
     #divLogin {
         margin-top: 15vh;
     }
