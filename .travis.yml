@@ -31,7 +31,7 @@ before_script:
   - export DISPLAY=:99.0
 
 install:
-  - cd Pruebas/Angular-Back/bananat
+  - cd bananat
   - npm install
   - cd ../server
   - npm install
@@ -44,5 +44,5 @@ script:
   - node index.js&
   - cd ../bananat
   - npm run test
-  - cd ../../../
+  - cd ../
   - sonar-scanner
