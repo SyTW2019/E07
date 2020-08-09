@@ -30,9 +30,12 @@ before_install:
  
 services:
   - xvfb
+  - mongodb
   
 before_script:
   - export DISPLAY=:99.0
+  - cd Pruebas/Angular-Back/server
+  - npm install 
   #- sh -e /etc/init.d/xvfb start
 
 install:
@@ -46,4 +49,6 @@ notifications:
 script:
   #- sonar-scanner
   #- npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - node index.js
+  - cd Pruebas/Angular-Back/bananat
   - npm run test
