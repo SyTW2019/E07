@@ -43,6 +43,7 @@ script:
   #- sonar-scanner
   - node index.js&
   - cd ../bananat
+  - npm run karma
   - npm run test
   - cd ../
   - sonar-scanner

@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "karma start --browsers Firefox --single-run, ng e2e",
+    "karma": "karma start --browsers Firefox --single-run",
+    "test": "ng e2e",
     "lint": "ng lint"
   },
   "private": true,
