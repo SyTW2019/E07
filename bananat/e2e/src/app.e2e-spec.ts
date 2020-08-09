@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, logging, $ } from 'protractor';
 import {by, element} from 'protractor';
 
 describe('workspace-project App', () => {
@@ -234,11 +234,8 @@ describe('workspace-project App', () => {
             element( by.buttonText( 'Iniciar Sesión' ) ).click();
             browser.sleep(5000);
             expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
-            expect(element(by.name('Logout')).isPresent()).toBe(true);
-            element(by.name('Logout')).click();
-            browser.sleep(4000);
-            expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
         });
+
 
                 //it ('Borrar un usuario', function () {
                        //db.removeUser(usertest.usr);
@@ -246,7 +243,7 @@ describe('workspace-project App', () => {
 
                 //it ('Comprobar el usuario borrado',function() {
                // browser.get('http://localhost:4200/login');
-		//element( by.id( 'user_field' ) ).sendKeys(usertest.email);
+		       //element( by.id( 'user_field' ) ).sendKeys(usertest.email);
                 //element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
                 //element( by.buttonText( 'Iniciar Sesión' ) ).click();
 
@@ -255,37 +252,91 @@ describe('workspace-project App', () => {
     });
 
 	describe('Test de la página chat', function(){
+
+        it('Funcionamiento de Boton de cerrar sesión',function(){
+            browser.get('http://localhost:4200/chat');
+            expect(element(by.name('Logout')).isPresent()).toBe(true);
+	         element(by.name('Logout')).click();
+            browser.sleep(4000);
+            expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
+        });
+
 		it ('Cerrar usuario tras iniciar sesión',function() {
             browser.get('http://localhost:4200/login');
-            browser.sleep(4000);
             element( by.id( 'user_field' ) ).sendKeys(usertest.email);
             element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
             element( by.buttonText( 'Iniciar Sesión' ) ).click();
-            browser.sleep(4000);
+            browser.sleep(1000);
             expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
             let lOut = element(by.css('.logout'));
             expect(lOut.isPresent()).toBe(true);
             expect(element(by.name('Logout')).isPresent()).toBe(true);
             element(by.name('Logout')).click();
-            browser.sleep(4000);
-            expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
-        });
-/*
-       		it('Cerrar sesión',function(){
-            browser.get('http://localhost:4200/chat');
-            let lOut = element(by.css('.logout'));
-            expect(lOut.isPresent()).toBe(true);
-        });
-
-		it('Funcionamiento de Boton de cerrar sesión',function(){
-            browser.get('http://localhost:4200/chat');
-            expect(element(by.name('Logout')).isPresent()).toBe(true);
-	    element(by.name('Logout')).click();
-            browser.sleep(4000);
+            browser.sleep(1000);
             expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
         });
 
-*/
+
+		it('NO se puede cerrar sesión,sin haber iniciado previamente',function(){
+            browser.get('http://localhost:4200/chat');
+            expect(element(by.name('Logout')).isPresent()).toBe(false);
+            browser.sleep(2000)
+            expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
+        });
+
+        it('Que aparezca el nombre del usuario en su chat cuando inicia sesión',function(){
+            browser.get('http://localhost:4200/login');
+            element( by.id( 'user_field' ) ).sendKeys(usertest.email);
+            element( by.id( 'password_field' ) ).sendKeys(usertest.pass);
+            element( by.buttonText( 'Iniciar Sesión' ) ).click();
+            browser.sleep(1000);
+            expect(browser.getCurrentUrl()).toBe('http://localhost:4200/chat');
+            expect(element(by.id('chatName')).isPresent()).toBe(true);
+            expect(element(by.id('chatName')).getText()).toEqual(usertest.name + ' ' + usertest.last);
+        });
+
+        it('Exista una pantalla de intercambio de mensajes',function(){
+            browser.get('http://localhost:4200/chat');
+            expect(element(by.id('messageArea')).isPresent()).toBe(true);
+        });
+
+        it('Exista una imagen de perfil en su chat y unos parametros css especificos',function(){
+            browser.get('http://localhost:4200/chat');
+            expect(element(by.id('chatImage')).isPresent()).toBe(true);
+            expect($('#chatImage').getCssValue('background')).toEqual('rgba(0, 0, 0, 0) url("http://s3.amazonaws.com/37assets/svn/765-default-avatar.png") no-repeat scroll 50% 50% / cover padding-box border-box');
+        });
+
+        it('Que exista un campo de mensaje y un boton de envio',function(){
+            browser.get('http://localhost:4200/chat');
+            expect(element(by.id('chatMessageBar')).isPresent()).toBe(true);
+        });
+
+        it('Presencia y Funcionamiento de un campo de mensaje',function(){
+            browser.get('http://localhost:4200/chat');
+            expect(element(by.id('boxMessage')).isPresent()).toBe(true);
+            expect(element(by.id('message')).sendKeys('Hola me llamo manolo'));
+            browser.sleep(100);
+            expect(element(by.id('message')).getText()).toEqual('Hola me llamo manolo');
+        });
+
+        it('Existencia de un boton que envie el mensaje',function(){
+            //browser.get('http://localhost:4200/chat');
+            expect(element(by.id('boxMessage')).isPresent()).toBe(true);
+        });
+
+        it('Existencia de un historial de mensajes',function(){
+            //browser.get('http://localhost:4200/chat');
+            expect(element(by.id('chatHistory')).isPresent()).toBe(true);
+        });
+
+        it('Funcionamiento del boton de enviar mensaje',function(){
+            //browser.get('http://localhost:4200/chat');
+            expect(element(by.id('sendButton')).isPresent()).toBe(true);
+            element( by.id( 'sendButton' ) ).click();
+            browser.sleep(100);
+
+        });
+
 	});
 
 	afterEach(async () => {
