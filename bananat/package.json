@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng e2e",
+    "test": "ng e2e --port 4100",
     "lint": "ng lint"
   },
   "private": true,

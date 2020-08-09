@@ -1,6 +1,5 @@
-/*
 @import url('https://fonts.googleapis.com/css?family=Neutonr&display=swap');
-*/
+
 .containerPage {
     display: flex;
     flex-direction: column;
@@ -25,7 +24,7 @@
 }
 
 #chatHeader {
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     height: 15%;
@@ -34,7 +33,7 @@
 
 #chatName {
     font-size: 2vh;
-    font-family: cursive;
+    font-family: Neuton;
 }
 
 #chatImage {

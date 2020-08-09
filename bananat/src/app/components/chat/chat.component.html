@@ -1,6 +1,6 @@
 <div class="containerPage">
     <div class="logout">
-        <button class="btn waves-effect waves-light btn-small" name="Logout" (click)="logout()"><em class="material-icons">exit_to_app</em>
+        <button class="btn waves-effect waves-light btn-small" name="Logout" (click)="logout()"><i class="material-icons">exit_to_app</i>
         </button>
     </div>
     <div id="messageArea" class="row col s12">
@@ -22,7 +22,7 @@
                 <textarea id="message" rows="10" cols="50" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage(username, message)">{{ message }}</textarea>
             </div>
             <div class="col s1" id="submitButton">
-                <button (click)="sendMessage(username, message)" id="sendButton" class="btn-block btn-small waves-effect waves-light" type="submit"><em class="material-icons">send</em></button>
+                <button (click)="sendMessage(username, message)" id="sendButton" class="btn-block btn-small waves-effect waves-light" type="submit"><i class="material-icons">send</i></button>
             </div>
         </div>
     </div>

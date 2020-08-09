@@ -32,6 +32,7 @@ mongoose.connect('mongodb://localhost:27017/bananat', {
     }
 });
 //fin conex
+
 app.use(logger("dev"));
 
 app.use((req, res, next) => {
