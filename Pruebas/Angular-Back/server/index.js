@@ -5,6 +5,7 @@ let app = require("./app.js");
 let port = process.env.PORT || 4300;
 let logger = require("morgan");
 let users = require("./routes/users.route.js");
+let cors = require('cors');
 
 let WebSocket = require("ws");
 let WebSocketServer = require('ws').Server;
@@ -32,6 +33,8 @@ mongoose.connect('mongodb://localhost:27017/bananat', {
     }
 });
 //fin conex
+
+app.use(cors());
 
 app.use(logger("dev"));
 
