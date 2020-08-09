@@ -44,3 +44,5 @@ script:
   - node index.js&
   - cd ../bananat
   - npm run test
+  - cd ../../../
+  - sonar-scanner
