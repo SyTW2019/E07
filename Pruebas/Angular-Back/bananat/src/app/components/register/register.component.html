@@ -3,7 +3,7 @@
     <div class="register">
         <form class="col s12 m12 l12 formulario">
             <div class="row field">
-                <i class="material-icons">person</i>
+                <i class="material-icons" id="ir-persona">person</i>
                 <div class="namefield col s8 m8 l12">
                     <input id="first_name" type="text" placeholder="Nombre" name="name" [(ngModel)]="name">
                 </div>
@@ -12,19 +12,19 @@
                 </div>
             </div>
             <div class="row field">
-                <i class="material-icons">enhanced_encryption</i>
+                <i class="material-icons" id="ir-candado">enhanced_encryption</i>
                 <div class="input-field col s12 m12 l12">
                     <input id="password" type="password" class="validate" placeholder="Contraseña" name="pwd" [(ngModel)]="pwd">
                 </div>
             </div>
             <div class="row field">
-                <i class="material-icons">email</i>
+                <i class="material-icons" id="ir-mensaje">email</i>
                 <div class="input-field col s12 m12 l12">
                     <input id="email" type="email" class="validate" placeholder="Correo" name="mail" [(ngModel)]="mail">
                 </div>
             </div>
             <div class="row field">
-                <i class="material-icons">text_fields</i>
+                <i class="material-icons" id="ir-nu">text_fields</i>
                 <div class="input-field col s12 m12 l12">
                     <input id="username" type="text" class="validate" placeholder="Nombre de usuario" name="username" [(ngModel)]="username">
                 </div>
