@@ -40,7 +40,7 @@ notifications:
   slack: sytw:WVOowm9Fxyks9mdwi1V6m6io
 
 script:
+  #- sonar-scanner
   - node index.js&
   - cd ../bananat
   - npm run test
-  - sonar-scanner
