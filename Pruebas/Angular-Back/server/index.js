@@ -33,8 +33,7 @@ mongoose.connect('mongodb://localhost:27017/bananat', {
     }
 });
 //fin conex
-
-app.use(cors());
+app.options('*', cors());
 
 app.use(logger("dev"));
 
