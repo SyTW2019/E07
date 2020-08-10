@@ -226,6 +226,17 @@ describe('workspace-project App', () => {
             expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
         });
 
+        it ('Crear otro usuario para la interaccion de mensajes', function () {
+            browser.get('http://localhost:4200/register' );
+            element( by.id( 'first_name' ) ).sendKeys(receiver.email );
+            element( by.id( 'surname' ) ).sendKeys(receiver.last );
+            element( by.id( 'password' ) ).sendKeys( receiver.pass );
+            element( by.id( 'email' ) ).sendKeys(receiver.email );
+            element( by.id( 'username') ).sendKeys( receiver.username );
+            element( by.buttonText( 'Registrarse' ) ).click();
+            browser.sleep(2000);
+            expect( browser.getCurrentUrl() ).toBe( 'http://localhost:4200/login' );
+        });
 
         it ('Comprobar el usuario creado',function() {
             browser.get('http://localhost:4200/login');
