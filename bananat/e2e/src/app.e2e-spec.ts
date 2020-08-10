@@ -5,8 +5,8 @@ import {by, element} from 'protractor';
 describe('workspace-project App', () => {
 
 	beforeEach(() => {
-		new AppPage();
-    });
+        new AppPage();
+        });
 
 	let usertest = {
         name:   'Manolo',
@@ -15,13 +15,13 @@ describe('workspace-project App', () => {
         pass:   'manolo',
         username: 'Manolo'
     }
-    /*let receiver = {
-        name:   'End2End Receiver',
-        last:   'pepito',
-        email:  'e2ereceiver@netchat.com',
-        pass:   'e2etesting',
-        username: 'receiver'
-    }*/
+    let receiver = {
+        name:   'Pepe',
+        last:   'pepe',
+        email:  'pepe@gmail.com',
+        pass:   'pepe',
+        username: 'Pepe'
+    }
 
     browser.get('http://localhost:4200/');
 
@@ -326,6 +326,7 @@ describe('workspace-project App', () => {
 
         it('Existencia de un historial de mensajes',function(){
             //browser.get('http://localhost:4200/chat');
+            browser.sleep(2000);
             expect(element(by.id('chatHistory')).isPresent()).toBe(true);
         });
 
@@ -334,7 +335,54 @@ describe('workspace-project App', () => {
             expect(element(by.id('sendButton')).isPresent()).toBe(true);
             element( by.id( 'sendButton' ) ).click();
             browser.sleep(100);
+        });
 
+        it('Funcionamiento del historial de mensajes',function(){
+            var texto = element(by.css('.sent'));
+            expect(texto.getText()).toEqual('Hola me llamo manolo')
+        });
+
+        it('Enviar un mensaje y comprobar que aparece en el historial',function(){
+            expect(element(by.id('message')).sendKeys('Tengo mucho calor'));
+            element( by.id( 'sendButton' ) ).click();
+            var list = element.all(by.css('.sent'));
+            expect(list.count()).toBe(2);
+        });
+
+        it('comprobar que no se ha recibido ninguna respuesta',function(){
+            var resp = element.all(by.css('.replies'));
+            expect(resp.count()).toBe(0);
+        });
+
+        it('Enviar una respuesta con otro usuario',async function(){
+            const ffBrowser = await browser.forkNewDriverInstance(true,true).ready;
+            (await ffBrowser.getProcessedConfig()).capabilities = {'browserName': 'firefox' };
+            var element2 = ffBrowser.element;
+
+            ffBrowser.get('http://localhost:4200/login'); 
+            element2( by.id( 'user_field' ) ).sendKeys(receiver.email);
+            element2( by.id( 'password_field' ) ).sendKeys(receiver.pass);
+            element2( by.buttonText( 'Iniciar Sesión' ) ).click();
+            ffBrowser.sleep(200);
+            expect(ffBrowser.getCurrentUrl()).toBe('http://localhost:4200/chat');
+            expect(element2(by.id('message')).sendKeys('Te estoy respondiendo'));
+            element2( by.id( 'sendButton' ) ).click();
+            ffBrowser.sleep(2000);
+        });
+
+        it('comprobar que se ha recibido una respuesta en el usuario principal',function(){
+            var resp1 = element.all(by.css('.replies'));
+            expect(resp1.count()).toBe(1);
+        });
+
+        it('Examinar que el texto recibido concuerda con lo enviado',function(){
+            var texto = element(by.css('.replies'));
+            expect(texto.getText()).toEqual('Te estoy respondiendo')
+        });
+
+        it('Enviar un mensaje a la cuenta secundaria',function(){
+            expect(element(by.id('message')).sendKeys('Muchas gracias'));
+            element( by.id( 'sendButton' ) ).click();
         });
 
 	});
