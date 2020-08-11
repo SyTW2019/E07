@@ -19,9 +19,10 @@ h1{
 h3{
   font-size: 1.5em;
   color: rgba(0,0,0,.5);
-  a{
-    color: #259fc4;
-  }
+}
+
+a{
+  color: #259fc4;
 }
 
 .sky{
