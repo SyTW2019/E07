@@ -1,11 +1,3 @@
-@media screen and (min-width: 375px) {
-
-    .register {
-
-        background-color: purple;
-    }
-}
-
 ::ng-deep .body {
     margin: 0;
     padding: 0;
@@ -19,6 +11,7 @@
 
 ::placeholder {
     color: #828282;
+    font-size: 12px;
   }
 
 .appName {
@@ -37,8 +30,14 @@ section {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    height: 90vh;
+    width: 350px;
+    background-color: purple;
+}
+
+#first_name, #surname, #password, #email, #username
+{
+    height: 9vh;
 }
 
 .register {
@@ -47,15 +46,21 @@ section {
     justify-content: center;
     align-items: center;
     height: 60vh;
-    width: 40vh;
+    width: 350px;
     box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, .5);
     border-radius: 1.2vh;
     color: #000;
-    overflow: hidden;
     background-color: white;
 }
 
-.formulario {
+.row {
+    background-color: orange;
+    height: 50px;
+    width: 90vw;
+    /* margin-left: 0.05vw; */
+}
+
+/* .formulario {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -63,7 +68,7 @@ section {
     position: relative;
     padding-left: 1vh;
     z-index: 2;
-}
+} */
 
 .input-field label {
     color: black;
@@ -73,26 +78,26 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 2vh;
-    width: 100%;
+    /* margin-right: 2vh; */
+    /* width: 100%; */
 }
 
 .material-icons {
     height: 3vh;
-    margin: 2.5vh;
+    /* margin: 2.5vh; */
     color: black;
+    background-color: plum;
     z-index: 2;
 }
 
 input {
-    position: relative;
-    padding-left: 1vh;
+    /* padding-left: 1vh; */
     z-index: 2;
     border-width: 0.2vh;
     border-color: black;
     border-style: solid;
     border-radius: 0.5vh;
-    margin: 1.5vh;
+    /* margin: 1.5vh; */
 }
 
 .registerButton
@@ -205,4 +210,12 @@ span.label
 
 h1 {
     margin-bottom: 10%;
+}
+
+@media screen and (max-width: 1023px) {
+
+    .register {
+
+        width: 90vw;
+    }
 }
