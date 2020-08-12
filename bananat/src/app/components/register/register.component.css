@@ -32,7 +32,6 @@ section {
     flex-direction: column;
     height: 700px;
     width: 350px;
-    background-color: purple;
 }
 
 #first_name, #surname, #password, #email, #username
@@ -53,21 +52,10 @@ section {
 }
 
 .row {
-    background-color: orange;
     height: 50px;
     width: 90%;
     margin-left: 5%;
 }
-
-/* .formulario {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    position: relative;
-    padding-left: 1vh;
-    z-index: 2;
-} */
 
 .input-field label {
     color: black;
@@ -78,27 +66,21 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-right: 2vh; */
-    /* width: 100%; */
 }
 
 .material-icons {
     height: 3vh;
-    /* margin: 2.5vh; */
     color: black;
-    background-color: plum;
     z-index: 2;
 }
 
 input {
-    /* padding-left: 1vh; */
     z-index: 2;
     border-width: 0.2vh;
     border-color: black;
     border-style: solid;
     border-radius: 0.5vh;
     height: 50px;
-    /* margin: 1.5vh; */
 }
 
 .registerButton
@@ -114,7 +96,6 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightpink;
 }
 
 /****************** Google Register ******************/
@@ -165,10 +146,6 @@ span.label
     cursor: pointer;
     transition: 0.4s;
 }
-
-/*******************************************************/ 
-
-
 
 /****************** Facebook Register ******************/
 
