@@ -1,5 +1,5 @@
 <section>
-    <h1 class="appName" tabindex="0">BANANAT</h1>
+    <h1 class="appName" tabindex="0" [routerLink]="['/login']">BANANAT</h1>
     <div class="register">
         <form class="col s12 m12 l12 formulario">
             <div class="row field">
@@ -28,7 +28,6 @@
                 <div class="input-field col s12 m12 l12">
                     <input id="username" type="text" class="validate" placeholder="Nombre de usuario" name="username" [(ngModel)]="username">
                 </div>
-
             </div>
         </form>
         <div class="socialnetworkregister flex-container">
@@ -46,12 +45,10 @@
                 </div>
             </button>
         </div>
-
         <div class="registerButton">
             <button class="btn waves-effect waves-light" type="submit" name="action" (click)="register()">
                     Registrarse                            
             </button>
-
         </div>
     </div>
 </section>
