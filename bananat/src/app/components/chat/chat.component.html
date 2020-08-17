@@ -22,7 +22,7 @@
                 <textarea id="message" rows="10" cols="50" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage(username, message)">{{ message }}</textarea>
             </div>
             <div class="col s1" id="submitButton">
-                <button (click)="sendMessage(username, message)" id="sendButton" class="btn-block btn-small waves-effect waves-light" type="submit"><em class="material-icons">send</em></button>
+                <button (click)="sendMessage(username, message)" id="sendButton"  type="submit"><em class="material-icons">send</em></button>
             </div>
         </div>
     </div>
