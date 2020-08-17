@@ -98,8 +98,6 @@ input {
     align-items: center;
 }
 
-/****************** Google Register ******************/
-
 .googleRegister
 {
     display: flex;
@@ -146,8 +144,6 @@ span.label
     cursor: pointer;
     transition: 0.4s;
 }
-
-/****************** Facebook Register ******************/
 
 .fbIcon
 {

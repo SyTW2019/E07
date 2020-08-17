@@ -1,9 +1,9 @@
 "use strict"
 
-let secret = require("../secret").CODE
+let secret = require("../secret").CODE;
 
-let token = require("jwt-simple")
-let timestmp = require("moment")
+let token = require("jwt-simple");
+let timestmp = require("moment");
 
 exports.createToken = function(user) {
     let loadToken = {

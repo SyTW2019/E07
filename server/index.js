@@ -31,20 +31,16 @@ mongoose.connect('mongodb://localhost:27017/bananat', {
         console.log("Conexión con la base de datos: Correcta");
     }
 });
-//fin conex
 app.use(logger("dev"));
 
 app.use((req, res, next) => {
-    //Asterisco, campo donde permito a las Ip's que tendran el acceso, este significa todas(el propio '*')
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Athorization, Origin, Content-Type, Accept, Access-Control-Allow-Request-Method");
-    //Tipos de llamadas permitidos a la API
     res.header("Access-Control-Allow-Request-Methods", "GET, POST,  OPTIONS, PUT, DELETE");
     res.header("Allow", "GET, POST,  OPTIONS, PUT, DELETE");
     next();
 });
 
-//Se usará esta ruta para las funciones que vamos a ir implementando "v1"--> version 1. No se recomienda borrar las anteriores
 app.use("/api/v1/users/", users);
 
 wss.on('connection', function(ws) {
@@ -63,10 +59,7 @@ wss.on('connection', function(ws) {
         console.log("Got message from: " + JSON.parse(message).author);
         console.log("Type: " + JSON.parse(message).type);
         for (let i = 0; i < wsList.length; i++) {
-            // send to everybody on the site
             wsList[i].send(message);
-
-            //wsList[wsList.indexOf(ws.uuid) === message.wsID].send(message);
         }
     });
 });
