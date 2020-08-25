@@ -1,0 +1,251 @@
+::ng-deep .body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../../assets/img/full_login_background.jpg");
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+}
+
+::placeholder {
+    color: #828282;
+    font-size: 12px;
+  }
+
+.appName {
+    margin-bottom: 7vh;
+    text-transform: uppercase;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 0.1vh 0.1vh 0.1vh #919191, 0.1vh 0.2vh 0.1vh #919191, 0.1vh 0.3vh 0.1vh #919191, 0.1vh 0.4vh 0.1vh #919191, 0.1vh 0.5vh 0.1vh #919191, 0.1vh 0.6vh 0.1vh #919191, 0.1vh 0.7vh 0.1vh #919191, 0.1vh 0.8vh 0.1vh #919191, 0.1vh 0.9vh 0.1vh #919191, 0.1vh 1vh 0.1vh #919191, 0.1vh 1.8vh 0.6vh rgba(16, 16, 16, 0.4), 0.1vh 2.2vh 1vh rgba(16, 16, 16, 0.2), 0.1vh 2.5vh 3.5vh rgba(16, 16, 16, 0.2), 0.1vh 3vh 6vh rgba(16, 16, 16, 0.4);
+    text-align: center;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 700px;
+    width: 350px;
+}
+
+#first_name, #surname, #password, #email, #username
+{
+    height: 50px;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, .5);
+    border-radius: 1.2vh;
+    color: #000;
+    background-color: white;
+}
+
+.row {
+    height: 50px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.input-field label {
+    color: black;
+    height: 50px;
+}
+
+.field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.material-icons {
+    height: 3vh;
+    color: black;
+    z-index: 2;
+}
+
+input {
+    z-index: 2;
+    border-width: 0.2vh;
+    border-color: black;
+    border-style: solid;
+    border-radius: 0.5vh;
+    height: 50px;
+}
+
+.registerButton
+{
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+}
+
+.socialnetworkregister.flex-container
+{
+    height: 4vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.googleRegister
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 14vh;
+    height: inherit;
+    border-radius: 0.5vh;
+    border-style: solid;
+    border-width: 0.2vh;
+    border-color: #db4242;
+    background-color: #db4242;
+    margin: 1vh;
+}
+
+#googleCustomBtn
+{
+    width: 9vh;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#googleCustomBtn:hover
+{
+    cursor: pointer;
+}
+
+span.label
+{
+    font-family: serif;
+    font-weight: normal;
+}
+
+.GIcon
+{
+    background: url("../../assets/img/google_icon.png")  no-repeat;
+    height: 2.5vh;
+}
+
+.googleRegister:hover {
+    background-color: #ff4b4b;
+    border-color: #ff4b4b;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.fbIcon
+{
+    height: 2.5vh;
+    filter: invert(100%);
+    background-image: url("../../assets/img/facebook_icon.png") no-repeat;
+}
+
+#facebookCustomBtn
+{
+    width: 9vh;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.facebookRegister
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 14vh;
+    height: inherit;
+    border-radius: 0.5vh;
+    border-style: solid;
+    border-width: 0.2vh;
+    border-color: #38539B;
+    background-color: #38539B;
+    margin: 1vh;
+}
+
+.facebookRegister:hover {
+    background-color: #4668c2;
+    border-color: #4668c2;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+h1 {
+    margin-bottom: 10%;
+}
+
+@media screen and (max-width: 767px) {
+
+    .register {
+
+        width: 80vw;
+        height: 400px;
+    }
+}
+
+@media screen and (width: 768px) and (height: 1024px) {
+
+    .register {
+
+        width: 350px;
+        height: 400px;
+    }
+    .facebookRegister
+    {
+        height: 30px;    
+    }
+
+    .googleRegister
+    {
+        height: 30px;
+    }
+    .GIcon
+    {
+        height: 2vh;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    #facebookCustomBtn
+    {
+        font-size: 10px;
+    }
+
+    #googleCustomBtn
+    {
+        font-size: 10px;
+    }    
+}
+
+@media screen and (width: 1024px) and (height: 1366px) {
+
+    .facebookRegister
+    {
+        height: 35px;    
+    }
+
+    .googleRegister
+    {
+        height: 35px;
+    }
+    .GIcon
+    {
+        height: 2vh;
+    } 
+}
+
+
